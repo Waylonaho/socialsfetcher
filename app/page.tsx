@@ -98,6 +98,7 @@ export default function HomePage() {
         </h1>
         <p className="text-slate-400 mb-8 max-w-2xl mx-auto text-sm sm:text-base">
           Paste your TikTok, Instagram Reel, YouTube Short, or X video link below to extract clean HD media instantly.
+          Impact-Site-Verification: 115cdc62-82e4-4468-a688-28646152be09
         </p>
 
         {/* Input Form */}
