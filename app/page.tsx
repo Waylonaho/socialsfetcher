@@ -61,11 +61,14 @@ export default function HomePage() {
           <a href="/" className="text-xl font-extrabold text-indigo-400">
             Socials<span className="text-white">Fetcher</span>
           </a>
-          <nav className="hidden md:flex space-x-6 text-sm text-slate-400 font-medium">
+          <nav className="hidden md:flex items-center space-x-6 text-sm text-slate-400 font-medium">
             <a href="/tiktok/download/no-watermark" className="hover:text-indigo-400 transition">TikTok</a>
             <a href="/instagram/reels/downloader" className="hover:text-indigo-400 transition">Instagram</a>
             <a href="/youtube/shorts/saver" className="hover:text-indigo-400 transition">YouTube</a>
             <a href="/twitter/video/mp4" className="hover:text-indigo-400 transition">X / Twitter</a>
+            <a href="/download/hd-4k" className="text-amber-400 font-bold hover:text-amber-300 transition flex items-center gap-1">
+              ⚡ 4K PRO
+            </a>
           </nav>
         </div>
       </header>
@@ -177,10 +180,10 @@ export default function HomePage() {
           </div>
         )}
 
-        {/* pSEO Internal Linking Hub */}
+        {/* pSEO Internal Linking Hub with 4K PRO Direct Link */}
         <section className="py-12 mt-12 bg-slate-900/40 border-t border-slate-800/80 rounded-2xl">
           <h2 className="text-xl font-bold mb-6 text-center text-slate-200">Supported Media Tools</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 px-4">
             <a href="/tiktok/download/no-watermark" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
               <div className="text-xl mb-1">🎵</div>
               <h3 className="font-bold text-sm text-white">TikTok Downloader</h3>
@@ -201,6 +204,11 @@ export default function HomePage() {
               <h3 className="font-bold text-sm text-white">X / Twitter Saver</h3>
               <p className="text-xs text-slate-400 mt-1">Save embedded video files from posts.</p>
             </a>
+            <a href="/download/hd-4k" className="p-4 rounded-xl bg-slate-900 border border-amber-500/40 hover:border-amber-400 transition text-left bg-amber-500/5">
+              <div className="text-xl mb-1">⚡</div>
+              <h3 className="font-bold text-sm text-amber-400">4K PRO Downloader</h3>
+              <p className="text-xs text-slate-400 mt-1">Unlock high-bitrate 4K & batch downloads.</p>
+            </a>
           </div>
         </section>
       </main>
@@ -211,4 +219,5 @@ export default function HomePage() {
       </footer>
     </div>
   );
+}
 }
