@@ -8,7 +8,6 @@ export const metadata: Metadata = {
     template: '%s | SocialsFetcher',
   },
   description:
-    Impact-Site-Verification: 115cdc62-82e4-4468-a688-28646152be09
     'Download high-quality videos, reels, shorts, and audio from TikTok, Instagram, YouTube, X (Twitter), and Pinterest for free with no watermarks.',
   keywords: [
     'social media downloader',
