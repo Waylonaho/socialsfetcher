@@ -12,6 +12,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/download/hd-4k',
     '/blog/turn-plain-video-into-ai-doodle-explainer',
     '/blog/get-paid-managing-social-media-accounts-from-home',
+    '/blog/build-passive-digital-income-stream-for-beginners',
+    '/blog/get-paid-clipping-videos-on-whop',
   ];
 
   return routes.map((route) => ({
