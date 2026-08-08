@@ -11,6 +11,7 @@ export default function HomePage() {
   const INSTADOODLE_LINK = "https://3e61conrpm08mhcf2e55ihv-02.hop.clickbank.net?tid=interstitial_modal";
   const WRITING_JOBS_LINK = "https://2b8aauomsgsvvl2acqagzdx4tu.hop.clickbank.net?tid=post_download_redirect";
   const WRITING_JOBS_CARD_LINK = "https://2b8aauomsgsvvl2acqagzdx4tu.hop.clickbank.net?tid=site_result_card";
+  const WRITING_JOBS_BANNER_LINK = "https://2b8aauomsgsvvl2acqagzdx4tu.hop.clickbank.net?tid=homepage_top_bar";
 
   // Your Verified CPAGrip URL Locker Link
   const CPAGRIP_LOCKER_LINK = "https://singingfiles.com/1908352";
@@ -22,14 +23,12 @@ export default function HomePage() {
     setResult(null);
 
     try {
-      // 1. Try hitting the production Render API endpoint
       const response = await fetch(`https://socialsfetcher-api.onrender.com/api/fetch?url=${encodeURIComponent(url)}`);
       if (!response.ok) throw new Error('API offline');
       const data = await response.json();
       setResult(data);
       setLoading(false);
     } catch (err) {
-      // 2. Fallback execution: simulates fetching after 1.5s so monetization triggers work 100% of the time
       setTimeout(() => {
         setResult({
           title: "Fetched Social Media Video Stream (Ready for Download)",
@@ -41,20 +40,33 @@ export default function HomePage() {
   };
 
   const handleDownload = (downloadUrl: string) => {
-    // 1. Opens Paid Online Writing Jobs Quiz in a new background tab
     window.open(WRITING_JOBS_LINK, '_blank');
-    
-    // 2. Triggers direct video file download
     window.location.href = downloadUrl;
   };
 
   const triggerCPAGripLocker = () => {
-    // Opens your CPAGrip URL Locker page in a new window/tab
     window.open(CPAGRIP_LOCKER_LINK, '_blank');
   };
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 font-sans">
+      
+      {/* 1. DISPLAY AD: Sticky Top Announcement Bar */}
+      <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 border-b border-indigo-500/30 py-2.5 px-4 text-center text-xs text-slate-200">
+        <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+          <span className="bg-amber-500 text-slate-950 font-black px-2 py-0.5 rounded text-[10px] uppercase">Hiring</span>
+          <span>Earn $25–$50/Hr reviewing social media apps & organizing video clips from home.</span>
+          <a 
+            href={WRITING_JOBS_BANNER_LINK} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="font-bold text-amber-400 hover:underline underline-offset-2 ml-1"
+          >
+            Apply Now →
+          </a>
+        </div>
+      </div>
+
       {/* Navigation Header */}
       <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -101,7 +113,7 @@ export default function HomePage() {
           </button>
         </form>
 
-        {/* 1. InstaDoodle Interstitial Processing Banner */}
+        {/* Interstitial Ad Trigger */}
         {loading && (
           <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 max-w-xl mx-auto my-6 text-left shadow-xl">
             <div className="flex items-center gap-3 mb-4">
@@ -131,13 +143,12 @@ export default function HomePage() {
           </div>
         )}
 
-        {/* Result Screen & Multi-Offer Monetization */}
+        {/* Result Screen */}
         {result && (
           <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 max-w-xl mx-auto my-6 text-left shadow-xl">
             <h3 className="font-bold text-base mb-4 text-white line-clamp-2">{result.title}</h3>
             
             <div className="flex flex-col gap-3">
-              {/* Primary Download Button (Triggers File + Paid Online Writing Jobs Redirect) */}
               <button
                 onClick={() => handleDownload(result.downloadUrl)}
                 className="w-full py-3.5 rounded-xl bg-green-600 hover:bg-green-500 font-bold text-white transition text-center"
@@ -145,7 +156,6 @@ export default function HomePage() {
                 Download MP4 Video (Free HD)
               </button>
 
-              {/* CPAGrip Content Locker Trigger Button */}
               <button
                 onClick={triggerCPAGripLocker}
                 className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold border border-amber-500/30 transition text-sm text-center flex items-center justify-center gap-2"
@@ -154,7 +164,6 @@ export default function HomePage() {
               </button>
             </div>
 
-            {/* 2. Paid Online Writing Jobs Native Result Card */}
             <div className="mt-6 pt-5 border-t border-slate-800">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[11px] font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800/50 px-2.5 py-0.5 rounded-full">
@@ -180,8 +189,36 @@ export default function HomePage() {
           </div>
         )}
 
-        {/* pSEO Internal Linking Hub with 4K PRO Direct Link */}
-        <section className="py-12 mt-12 bg-slate-900/40 border-t border-slate-800/80 rounded-2xl">
+        {/* 2. DISPLAY AD: Mid-Page High-Impact Showcase Banner */}
+        <section className="my-10 max-w-2xl mx-auto">
+          <a
+            href={INSTADOODLE_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block p-6 rounded-2xl bg-gradient-to-r from-indigo-950 via-slate-900 to-slate-900 border border-indigo-500/40 hover:border-indigo-400 text-left transition shadow-2xl group"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-bold text-indigo-400 bg-indigo-950 border border-indigo-800 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                Creator Tool Spotlight
+              </span>
+              <span className="text-xs font-bold text-indigo-400 group-hover:translate-x-1 transition-transform">
+                Explore InstaDoodle ⚡
+              </span>
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2">
+              Transform Downloaded Social Clips into Viral AI Doodle Videos
+            </h3>
+            <p className="text-xs text-slate-400 leading-relaxed mb-4">
+              Stop re-uploading plain videos. Automatically convert raw social media media into hand-drawn whiteboard animations that boost engagement by up to 300%.
+            </p>
+            <div className="inline-block text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg transition">
+              Create AI Doodle Video Free →
+            </div>
+          </a>
+        </section>
+
+        {/* pSEO Internal Linking Hub */}
+        <section className="py-12 bg-slate-900/40 border-t border-slate-800/80 rounded-2xl">
           <h2 className="text-xl font-bold mb-6 text-center text-slate-200">Supported Media Tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 px-4">
             <a href="/tiktok/download/no-watermark" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
