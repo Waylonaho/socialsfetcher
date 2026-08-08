@@ -7,6 +7,9 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
 
+  // YOUR LIVE OPUSCLIP AFFILIATE LINK
+  const OPUSCLIP_LINK = "https://opus.pro/?via=waylon";
+
   // Your Verified ClickBank HopLinks
   const INSTADOODLE_LINK = "https://3e61conrpm08mhcf2e55ihv-02.hop.clickbank.net?tid=interstitial_modal";
   const WRITING_JOBS_LINK = "https://2b8aauomsgsvvl2acqagzdx4tu.hop.clickbank.net?tid=post_download_redirect";
@@ -78,6 +81,9 @@ export default function HomePage() {
             <a href="/instagram/reels/downloader" className="hover:text-indigo-400 transition">Instagram</a>
             <a href="/youtube/shorts/saver" className="hover:text-indigo-400 transition">YouTube</a>
             <a href="/twitter/video/mp4" className="hover:text-indigo-400 transition">X / Twitter</a>
+            <a href={OPUSCLIP_LINK} target="_blank" rel="noopener noreferrer" className="text-purple-400 font-bold hover:text-purple-300 transition flex items-center gap-1">
+              ✨ OpusClip AI
+            </a>
             <a href="/download/hd-4k" className="text-amber-400 font-bold hover:text-amber-300 transition flex items-center gap-1">
               ⚡ 4K PRO
             </a>
@@ -122,22 +128,22 @@ export default function HomePage() {
             </div>
             
             <a 
-              href={INSTADOODLE_LINK} 
+              href={OPUSCLIP_LINK} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="block p-4 rounded-xl bg-slate-800/90 border border-indigo-500/40 hover:border-indigo-400 transition group"
+              className="block p-4 rounded-xl bg-slate-800/90 border border-purple-500/40 hover:border-purple-400 transition group"
             >
               <div className="flex items-center justify-between mb-2">
-                <span className="bg-indigo-600 text-[10px] font-bold text-white px-2 py-0.5 rounded uppercase tracking-wider">
-                  Featured AI Tool
+                <span className="bg-purple-600 text-[10px] font-bold text-white px-2 py-0.5 rounded uppercase tracking-wider">
+                  Featured AI Repurposer
                 </span>
-                <span className="text-xs text-indigo-400 group-hover:underline">Try InstaDoodle →</span>
+                <span className="text-xs text-purple-400 group-hover:underline">Try OpusClip →</span>
               </div>
               <h4 className="font-bold text-white text-sm sm:text-base">
-                Turn the videos you download into AI Whiteboard Animations
+                Turn long YouTube videos into 10 viral Shorts with 1 click
               </h4>
               <p className="text-xs text-slate-400 mt-1">
-                Average viewer attention span is 3 seconds. Transform plain clips into high-converting AI doodle explainers in 3 clicks.
+                OpusClip automatically extracts high-virality clips, adds animated captions, and generates AI B-roll.
               </p>
             </a>
           </div>
@@ -189,30 +195,30 @@ export default function HomePage() {
           </div>
         )}
 
-        {/* 2. DISPLAY AD: Mid-Page High-Impact Showcase Banner */}
+        {/* 2. OPUSCLIP PROMOTIONAL SHOWCASE BANNER */}
         <section className="my-10 max-w-2xl mx-auto">
           <a
-            href={INSTADOODLE_LINK}
+            href={OPUSCLIP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-6 rounded-2xl bg-gradient-to-r from-indigo-950 via-slate-900 to-slate-900 border border-indigo-500/40 hover:border-indigo-400 text-left transition shadow-2xl group"
+            className="block p-6 rounded-2xl bg-gradient-to-r from-purple-950 via-slate-900 to-slate-900 border border-purple-500/40 hover:border-purple-400 text-left transition shadow-2xl group"
           >
             <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-bold text-indigo-400 bg-indigo-950 border border-indigo-800 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                Creator Tool Spotlight
+              <span className="text-xs font-bold text-purple-400 bg-purple-950 border border-purple-800 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                AI Repurposing Engine
               </span>
-              <span className="text-xs font-bold text-indigo-400 group-hover:translate-x-1 transition-transform">
-                Explore InstaDoodle ⚡
+              <span className="text-xs font-bold text-purple-400 group-hover:translate-x-1 transition-transform">
+                Try OpusClip Free ⚡
               </span>
             </div>
             <h3 className="text-lg font-bold text-white mb-2">
-              Transform Downloaded Social Clips into Viral AI Doodle Videos
+              Turn Any Long Video into Viral Shorts, Reels & TikToks
             </h3>
             <p className="text-xs text-slate-400 leading-relaxed mb-4">
-              Stop re-uploading plain videos. Automatically convert raw social media media into hand-drawn whiteboard animations that boost engagement by up to 300%.
+              OpusClip uses AI to curate viral moments from long footage, automatically adding dynamic animated captions, AI B-roll, and auto-framing for 9:16 layout.
             </p>
-            <div className="inline-block text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg transition">
-              Create AI Doodle Video Free →
+            <div className="inline-block text-xs font-bold bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded-lg transition">
+              Repurpose Videos with AI Free →
             </div>
           </a>
         </section>
