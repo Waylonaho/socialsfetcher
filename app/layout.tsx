@@ -1,0 +1,82 @@
+import type { Metadata } from 'next';
+import './globals.css';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://socialsfetcher.com'),
+  title: {
+    default: 'SocialsFetcher - Free Social Media Video & Audio Downloader',
+    template: '%s | SocialsFetcher',
+  },
+  description:
+    'Download high-quality videos, reels, shorts, and audio from TikTok, Instagram, YouTube, X (Twitter), and Pinterest for free with no watermarks.',
+  keywords: [
+    'social media downloader',
+    'tiktok downloader no watermark',
+    'instagram reels downloader hd',
+    'youtube shorts saver',
+    'twitter video converter mp4',
+    'extract audio from tiktok',
+  ],
+  authors: [{ name: 'SocialsFetcher Team' }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://socialsfetcher.com',
+    siteName: 'SocialsFetcher',
+    title: 'SocialsFetcher - Free Social Media Downloader (HD / No Watermark)',
+    description:
+      'Fast, free, 1080p video downloader for TikTok, Instagram Reels, YouTube Shorts, and X.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SocialsFetcher - Free HD Video Downloader',
+    description: 'Download social media videos without watermarks instantly.',
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebApplication',
+              name: 'SocialsFetcher',
+              url: 'https://socialsfetcher.com',
+              applicationCategory: 'MultimediaApplication',
+              operatingSystem: 'All',
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD',
+              },
+              description:
+                'Free online tool to fetch and download HD videos without watermarks from TikTok, Instagram, YouTube, and X.',
+            }),
+          }}
+        />
+      </head>
+      <body className="bg-slate-950 text-slate-100 antialiased font-sans">
+        {children}
+      </body>
+    </html>
+  );
+}
