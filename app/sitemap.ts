@@ -19,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/blog/how-to-lower-saas-tool-costs',
     '/blog/cheapest-way-to-get-pipiads',
     '/blog/cheapest-way-to-get-kalodata',
-    
+    '/blog/audifort-hearing-support-review-guide',
   ];
 
   return routes.map((route) => ({
