@@ -18,6 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/blog/boomers-guide-to-smartphone-sanity',
     '/blog/how-to-lower-saas-tool-costs',
     '/blog/cheapest-way-to-get-pipiads',
+    '/blog/cheapest-way-to-get-kalodata',
     
   ];
 
