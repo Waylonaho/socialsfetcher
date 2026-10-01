@@ -21,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/blog/cheapest-way-to-get-kalodata',
     '/blog/audifort-hearing-support-review-guide',
     '/blog/ai-podcast-video-repurposing-workflow',
+    '/blog/tiktok-shop-beginner-tools-budget',
   ];
 
   return routes.map((route) => ({
