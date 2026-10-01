@@ -22,6 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/blog/audifort-hearing-support-review-guide',
     '/blog/ai-podcast-video-repurposing-workflow',
     '/blog/tiktok-shop-beginner-tools-budget',
+    '/blog/faceless-channel-tools-stack-budget',
   ];
 
   return routes.map((route) => ({
