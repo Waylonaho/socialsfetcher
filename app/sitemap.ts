@@ -23,6 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/blog/ai-podcast-video-repurposing-workflow',
     '/blog/tiktok-shop-beginner-tools-budget',
     '/blog/faceless-channel-tools-stack-budget',
+    '/blog/start-tiktok-ad-agency-tools-budget',
   ];
 
   return routes.map((route) => ({
