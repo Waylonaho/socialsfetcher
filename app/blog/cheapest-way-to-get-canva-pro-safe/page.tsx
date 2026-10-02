@@ -1,18 +1,13 @@
 'use client';
 
 export default function CheapestWayToGetCanvaProPage() {
-  // Your ToolSuite Affiliate Links
   const TOOLSUITE_VIP_LINK = "https://whop.com/toolsuite/buy-vip?a=aptdiocese";
   const TOOLSUITE_365_LINK = "https://whop.com/toolsuite/365-days-access-e9?a=aptdiocese";
-
-  // Retained Navigation Links from Main Site
   const OPUSCLIP_LINK = "https://opus.pro/?via=waylon";
   const WRITING_JOBS_BANNER_LINK = "https://2b8aauomsgsvvl2acqagzdx4tu.hop.clickbank.net?tid=homepage_top_bar";
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 font-sans">
-      
-      {/* 1. Sticky Top Announcement Bar */}
       <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 border-b border-indigo-500/30 py-2.5 px-4 text-center text-xs text-slate-200">
         <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
           <span className="bg-amber-500 text-slate-950 font-black px-2 py-0.5 rounded text-[10px] uppercase">Hiring</span>
@@ -28,7 +23,6 @@ export default function CheapestWayToGetCanvaProPage() {
         </div>
       </div>
 
-      {/* Navigation Header */}
       <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <a href="/" className="text-xl font-extrabold text-indigo-400">
@@ -53,10 +47,7 @@ export default function CheapestWayToGetCanvaProPage() {
         </div>
       </header>
 
-      {/* Main Article Container */}
       <main className="flex-grow max-w-3xl mx-auto px-4 py-12 text-left">
-        
-        {/* Breadcrumb / Tag */}
         <div className="flex items-center gap-2 mb-4 text-xs font-semibold">
           <span className="bg-sky-950 border border-sky-700/60 text-sky-400 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
             Creator Design & AI Stack
@@ -64,7 +55,6 @@ export default function CheapestWayToGetCanvaProPage() {
           <span className="text-slate-500">• 5 min read</span>
         </div>
 
-        {/* Main Headline */}
         <h1 className="text-3xl sm:text-4xl sm:leading-tight font-extrabold mb-4 tracking-tight text-white">
           The Safest & Cheapest Way to Get Canva Pro in 2026 (Without Fake Team Links)
         </h1>
@@ -73,14 +63,12 @@ export default function CheapestWayToGetCanvaProPage() {
           Need Canva Pro for background removal, premium stock video, and brand kits? Avoid risky free team invites and learn the legitimate method to unlock Canva Pro, ChatGPT Plus, and 50+ tools under one dashboard.
         </p>
 
-        {/* Quick Answer Summary Box */}
         <div className="p-5 rounded-xl bg-slate-900 border border-slate-800 mb-8">
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
             <strong className="text-sky-400 font-semibold">Direct Answer:</strong> Free "Canva Pro Team Invite" links found on forums or YouTube get deactivated within days and compromise your project security. The most cost-effective and stable alternative is <a href={TOOLSUITE_VIP_LINK} target="_blank" rel="noopener noreferrer" className="text-indigo-400 underline font-bold">ToolSuite on Whop</a>, which provides secure 1-click access to <strong className="text-white">Canva Pro + ChatGPT Plus + PiPiADS + Kalodata</strong> for under $30/month.
           </p>
         </div>
 
-        {/* Section 1: The Risk with Free Canva Team Invites */}
         <section className="mb-10 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-white">
             The Danger of "Free Canva Pro Team Invite" Links
@@ -95,7 +83,6 @@ export default function CheapestWayToGetCanvaProPage() {
           </ul>
         </section>
 
-        {/* Section 2: Comparing Options */}
         <section className="mb-10">
           <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
             Direct Canva Pro vs. Shady Team Links vs. ToolSuite
@@ -134,7 +121,6 @@ export default function CheapestWayToGetCanvaProPage() {
           </div>
         </section>
 
-        {/* Section 3: High-Converting CTA Card */}
         <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-900 border border-indigo-500/40 my-8 shadow-xl">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-bold text-sky-400 bg-sky-950 border border-sky-800 px-2.5 py-0.5 rounded-full uppercase">
@@ -168,7 +154,6 @@ export default function CheapestWayToGetCanvaProPage() {
           </div>
         </div>
 
-        {/* Section 4: What You Can Do With Canva Pro on ToolSuite */}
         <section className="mb-10 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-white">
             Everything You Can Create With ToolSuite Pro Access
@@ -193,7 +178,6 @@ export default function CheapestWayToGetCanvaProPage() {
           </div>
         </section>
 
-        {/* Final CTA Box */}
         <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 text-center">
           <h3 className="text-lg font-bold text-white mb-2">Upgrade Your Creator Workflow Today</h3>
           <p className="text-xs text-slate-400 max-w-md mx-auto mb-4">
@@ -218,10 +202,8 @@ export default function CheapestWayToGetCanvaProPage() {
             </a>
           </div>
         </div>
-
       </main>
 
-      {/* Footer */}
       <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
         <p>© 2026 SocialsFetcher.com — Free Online Media Utility.</p>
       </footer>
