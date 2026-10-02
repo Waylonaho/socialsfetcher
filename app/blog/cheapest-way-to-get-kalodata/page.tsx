@@ -1,18 +1,13 @@
 'use client';
 
 export default function CheapestWayToGetKalodataPage() {
-  // Your ToolSuite Affiliate Links
   const TOOLSUITE_VIP_LINK = "https://whop.com/toolsuite/buy-vip?a=aptdiocese";
   const TOOLSUITE_365_LINK = "https://whop.com/toolsuite/365-days-access-e9?a=aptdiocese";
-
-  // Retained Navigation Links from Main Site
   const OPUSCLIP_LINK = "https://opus.pro/?via=waylon";
   const WRITING_JOBS_BANNER_LINK = "https://2b8aauomsgsvvl2acqagzdx4tu.hop.clickbank.net?tid=homepage_top_bar";
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 font-sans">
-      
-      {/* 1. Sticky Top Announcement Bar */}
       <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 border-b border-indigo-500/30 py-2.5 px-4 text-center text-xs text-slate-200">
         <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
           <span className="bg-amber-500 text-slate-950 font-black px-2 py-0.5 rounded text-[10px] uppercase">Hiring</span>
@@ -28,7 +23,6 @@ export default function CheapestWayToGetKalodataPage() {
         </div>
       </div>
 
-      {/* Navigation Header */}
       <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <a href="/" className="text-xl font-extrabold text-indigo-400">
@@ -53,10 +47,7 @@ export default function CheapestWayToGetKalodataPage() {
         </div>
       </header>
 
-      {/* Main Article Container */}
       <main className="flex-grow max-w-3xl mx-auto px-4 py-12 text-left">
-        
-        {/* Breadcrumb / Tag */}
         <div className="flex items-center gap-2 mb-4 text-xs font-semibold">
           <span className="bg-purple-950 border border-purple-700/60 text-purple-400 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
             TikTok Shop Analytics Guide
@@ -64,7 +55,6 @@ export default function CheapestWayToGetKalodataPage() {
           <span className="text-slate-500">• 5 min read</span>
         </div>
 
-        {/* Main Headline */}
         <h1 className="text-3xl sm:text-4xl sm:leading-tight font-extrabold mb-4 tracking-tight text-white">
           The Cheapest Way to Get Kalodata for TikTok Shop Analytics in 2026
         </h1>
@@ -73,26 +63,23 @@ export default function CheapestWayToGetKalodataPage() {
           Looking for a Kalodata free trial or coupon code? Here is how TikTok Shop affiliates and e-commerce sellers access Kalodata, PiPiADS, and ChatGPT without spending hundreds every month.
         </p>
 
-        {/* Quick Answer Callout */}
         <div className="p-5 rounded-xl bg-slate-900 border border-slate-800 mb-8">
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
             <strong className="text-purple-400 font-semibold">Quick Solution:</strong> Direct Kalodata subscriptions cost between $45 and $85+ per month. Instead of purchasing it alone, you can get 1-click access to <strong className="text-white">Kalodata + PiPiADS + Canva Pro + ChatGPT Plus</strong> together through <a href={TOOLSUITE_VIP_LINK} target="_blank" rel="noopener noreferrer" className="text-indigo-400 underline font-bold">ToolSuite on Whop</a> for under $30/month.
           </p>
         </div>
 
-        {/* Section 1: The Problem with Standalone TikTok Shop Analytics */}
         <section className="mb-10 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-white">
             Why Standalone Kalodata Subscriptions Eat Your Margins
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Kalodata is essential if you want to see exact TikTok Shop revenue, track top affiliate creators, and spot trending products before everyone else hops on them. 
+            Kalodata is essential if you want to see exact TikTok Shop revenue, track top affiliate creators, and spot trending products before everyone else hops on them.
           </p>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
             However, Kalodata alone doesn't give you TikTok ad intelligence (which requires PiPiADS), nor does it write your scripts or create your product thumbnails. Stacking these tools separately drains your budget before you make your first sale:
           </p>
 
-          {/* Pricing Comparison Table */}
           <div className="overflow-x-auto rounded-xl border border-slate-800 my-4">
             <table className="w-full text-xs sm:text-sm text-slate-300">
               <thead className="bg-slate-900 text-slate-400 border-b border-slate-800">
@@ -128,7 +115,6 @@ export default function CheapestWayToGetKalodataPage() {
           </div>
         </section>
 
-        {/* Section 2: How ToolSuite Delivers Kalodata Access */}
         <section className="mb-10 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-white">
             How ToolSuite Works for TikTok Shop Creators
@@ -144,7 +130,6 @@ export default function CheapestWayToGetKalodataPage() {
           </ul>
         </section>
 
-        {/* Section 3: High Converting CTA Card */}
         <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-950 via-slate-900 to-slate-900 border border-purple-500/40 my-8 shadow-xl">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-bold text-purple-400 bg-purple-950 border border-purple-800 px-2.5 py-0.5 rounded-full uppercase">
@@ -178,7 +163,6 @@ export default function CheapestWayToGetKalodataPage() {
           </div>
         </div>
 
-        {/* Section 4: FAQ */}
         <section className="mb-10 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-white">
             Frequently Asked Questions
@@ -198,10 +182,8 @@ export default function CheapestWayToGetKalodataPage() {
             </div>
           </div>
         </section>
-
       </main>
 
-      {/* Footer */}
       <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
         <p>© 2026 SocialsFetcher.com — Free Online Media Utility.</p>
       </footer>
