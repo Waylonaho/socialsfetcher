@@ -7,23 +7,24 @@ export default function AgencyBudgetToolsPage() {
 
   // Navigation Links from Main Site
   const OPUSCLIP_LINK = "https://opus.pro/?via=waylon";
-  const WRITING_JOBS_BANNER_LINK = "https://2b8aauomsgsvvl2acqagzdx4tu.hop.clickbank.net?tid=homepage_top_bar";
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 font-sans">
       
       {/* 1. Sticky Top Announcement Bar */}
-      <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 border-b border-indigo-500/30 py-2.5 px-4 text-center text-xs text-slate-200">
+      <div className="bg-gradient-to-r from-emerald-950 via-slate-900 to-indigo-950 border-b border-emerald-500/30 py-2.5 px-4 text-center text-xs text-slate-200">
         <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
-          <span className="bg-amber-500 text-slate-950 font-black px-2 py-0.5 rounded text-[10px] uppercase">Hiring</span>
-          <span>Earn $25–$50/Hr reviewing social media apps & organizing video clips from home.</span>
+          <span className="bg-emerald-500 text-slate-950 font-black px-2 py-0.5 rounded text-[10px] uppercase">
+            Agency Tech Stack
+          </span>
+          <span>Launch & service media buying clients with 50+ tools for under $30/month.</span>
           <a 
-            href={WRITING_JOBS_BANNER_LINK} 
+            href={TOOLSUITE_VIP_LINK} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="font-bold text-amber-400 hover:underline underline-offset-2 ml-1"
+            className="font-bold text-emerald-400 hover:underline underline-offset-2 ml-1"
           >
-            Apply Now →
+            Claim Agency Suite →
           </a>
         </div>
       </div>
@@ -61,11 +62,11 @@ export default function AgencyBudgetToolsPage() {
           <span className="bg-emerald-950 border border-emerald-700/60 text-emerald-400 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
             SMMA & Agency Blueprint
           </span>
-          <span className="text-slate-500">• 6 min read</span>
+          <span className="text-slate-500">• 6 min read • Updated for 2026</span>
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-3xl sm:text-4xl sm:leading-tight font-extrabold mb-4 tracking-tight text-white">
+        <h1 className="text-3xl sm:text-5xl sm:leading-tight font-extrabold mb-4 tracking-tight text-white">
           How to Launch a TikTok Ad Agency on a Budget: The Complete Tech Stack for Under $30/Month
         </h1>
 
@@ -74,7 +75,7 @@ export default function AgencyBudgetToolsPage() {
         </p>
 
         {/* Quick Answer Summary Box */}
-        <div className="p-5 rounded-xl bg-slate-900 border border-slate-800 mb-8">
+        <div className="p-5 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 mb-8 shadow-lg">
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
             <strong className="text-emerald-400 font-semibold">The Cost Breakdown:</strong> An agency-grade tool setup featuring PiPiADS, Kalodata, ChatGPT Plus, and Canva Pro normally runs $300–$500/month. By leveraging <a href={TOOLSUITE_VIP_LINK} target="_blank" rel="noopener noreferrer" className="text-indigo-400 underline font-bold">ToolSuite on Whop</a>, agency operators access 50+ enterprise-grade marketing and spy tools through a secure 1-click browser portal for less than $30/month.
           </p>
@@ -89,7 +90,7 @@ export default function AgencyBudgetToolsPage() {
             When you sign your first 1 to 3 clients for short-form ad management, your revenue needs to stay liquid. Committing to recurring corporate software costs eats up your initial margins:
           </p>
 
-          <div className="overflow-x-auto rounded-xl border border-slate-800 my-4">
+          <div className="overflow-x-auto rounded-xl border border-slate-800 my-6">
             <table className="w-full text-xs sm:text-sm text-slate-300">
               <thead className="bg-slate-900 text-slate-400 border-b border-slate-800">
                 <tr>
@@ -140,36 +141,36 @@ export default function AgencyBudgetToolsPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-4">
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
-              <h4 className="font-bold text-white text-sm mb-1">🎯 Client Competitor Audits</h4>
+              <h3 className="font-bold text-white text-sm mb-1">🎯 Client Competitor Audits</h3>
               <p className="text-xs text-slate-400">Use PiPiADS to show prospective clients exactly what their top 3 competitors are spending and testing right now.</p>
             </div>
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
-              <h4 className="font-bold text-white text-sm mb-1">📊 Market Demand Validation</h4>
+              <h3 className="font-bold text-white text-sm mb-1">📊 Market Demand Validation</h3>
               <p className="text-xs text-slate-400">Use Kalodata to demonstrate proven product demand, market size, and affiliate commission structures.</p>
             </div>
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
-              <h4 className="font-bold text-white text-sm mb-1">✍️ Batch UGC Scripting</h4>
+              <h3 className="font-bold text-white text-sm mb-1">✍️ Batch UGC Scripting</h3>
               <p className="text-xs text-slate-400">Produce 20 high-converting video scripts in one sitting with custom ChatGPT Plus ad-copy workflows.</p>
             </div>
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
-              <h4 className="font-bold text-white text-sm mb-1">⚡ Rapid Creative Turnaround</h4>
+              <h3 className="font-bold text-white text-sm mb-1">⚡ Rapid Creative Turnaround</h3>
               <p className="text-xs text-slate-400">Deliver polished ad variations, thumbnails, and hook cards with full Canva Pro asset access.</p>
             </div>
           </div>
         </section>
 
         {/* Section 3: High Converting CTA Card */}
-        <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-900 border border-indigo-500/40 my-8 shadow-xl">
+        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-900 border border-indigo-500/40 my-8 shadow-xl">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-bold text-emerald-400 bg-emerald-950 border border-emerald-800 px-2.5 py-0.5 rounded-full uppercase">
               Agency Starter Suite
             </span>
             <span className="text-xs text-slate-400">Over 50+ Premium Tools</span>
           </div>
-          <h3 className="text-lg font-bold text-white mb-2">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
             Run Your Marketing Operations for Under $30/Month
-          </h3>
-          <p className="text-xs sm:text-sm text-slate-300 mb-5 leading-relaxed">
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
             Eliminate costly tool subscriptions. Unlock PiPiADS, Kalodata, ChatGPT Plus, and Canva Pro with 1-click access inside ToolSuite on Whop.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -177,7 +178,7 @@ export default function AgencyBudgetToolsPage() {
               href={TOOLSUITE_VIP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs sm:text-sm transition"
+              className="flex-1 text-center py-3.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs sm:text-sm transition shadow-lg"
             >
               Get Monthly VIP Pass →
             </a>
@@ -185,7 +186,7 @@ export default function AgencyBudgetToolsPage() {
               href={TOOLSUITE_365_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 font-bold text-xs sm:text-sm transition"
+              className="flex-1 text-center py-3.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 font-bold text-xs sm:text-sm transition"
             >
               Get 365-Day Access (Best ROI) ⚡
             </a>
@@ -205,15 +206,42 @@ export default function AgencyBudgetToolsPage() {
               <strong>Record a 2-Minute Breakdown:</strong> Record a quick screen share demonstrating what the brand's direct competitor is doing right and identify 3 obvious creative angles they are missing.
             </li>
             <li>
-              <strong>Close the Retainer:</strong> Send the loom audit to the founder or marketing director. When they hire you, you already have the full stack inside ToolSuite to execute immediately.
+              <strong>Close the Retainer:</strong> Send the audit to the founder or marketing director. When they hire you, execute the entire campaign using your ToolSuite portal.
             </li>
           </ol>
         </section>
 
+        {/* Section 5: Agency FAQ */}
+        <section className="mb-10 space-y-4">
+          <h2 className="text-xl sm:text-2xl font-bold text-white">
+            Agency Frequently Asked Questions
+          </h2>
+          <div className="space-y-3">
+            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
+              <h3 className="font-bold text-white text-sm mb-1">Can I manage multiple client accounts with this?</h3>
+              <p className="text-xs sm:text-sm text-slate-400">
+                Yes. You can perform unlimited market research, download competitor ad assets, and generate creative copy across any number of client niches.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
+              <h3 className="font-bold text-white text-sm mb-1">How are session lockouts avoided?</h3>
+              <p className="text-xs sm:text-sm text-slate-400">
+                ToolSuite uses an isolated portable browser environment with dynamic cookie injection, avoiding the password friction found in typical group buys.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
+              <h3 className="font-bold text-white text-sm mb-1">Can I write off this subscription as a business expense?</h3>
+              <p className="text-xs sm:text-sm text-slate-400">
+                Yes. Whop provides standard commercial invoices and receipts suitable for tracking software operating expenses.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA Box */}
-        <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 text-center">
-          <h3 className="text-lg font-bold text-white mb-2">Scale Your Marketing Stack Today</h3>
-          <p className="text-xs text-slate-400 max-w-md mx-auto mb-4">
+        <div className="p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 text-center">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">Scale Your Marketing Stack Today</h2>
+          <p className="text-xs sm:text-sm text-slate-400 max-w-md mx-auto mb-6">
             Protect your agency cash flow by keeping fixed operating software expenses low.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
@@ -221,7 +249,7 @@ export default function AgencyBudgetToolsPage() {
               href={TOOLSUITE_VIP_LINK} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-bold text-xs sm:text-sm text-white transition"
+              className="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-bold text-xs sm:text-sm text-white transition"
             >
               Join ToolSuite VIP
             </a>
@@ -229,7 +257,7 @@ export default function AgencyBudgetToolsPage() {
               href={TOOLSUITE_365_LINK} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 font-bold text-xs sm:text-sm text-slate-950 transition"
+              className="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 font-bold text-xs sm:text-sm text-slate-950 transition"
             >
               Get 365-Day All-Access Pass
             </a>
