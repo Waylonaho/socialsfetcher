@@ -1,35 +1,74 @@
 import { MetadataRoute } from 'next';
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://socialsfetcher.com';
 
-  const routes = [
-    '',
-    '/tiktok/download/no-watermark',
-    '/instagram/reels/downloader',
-    '/youtube/shorts/saver',
-    '/twitter/video/mp4',
-    '/download/hd-4k',
-    '/blog/turn-plain-video-into-ai-doodle-explainer',
-    '/blog/get-paid-managing-social-media-accounts-from-home',
-    '/blog/build-passive-digital-income-stream-for-beginners',
-    '/blog/get-paid-clipping-videos-on-whop',
-    '/blog/tiktok-shadowban-survival-guide',
-    '/blog/boomers-guide-to-smartphone-sanity',
-    '/blog/how-to-lower-saas-tool-costs',
-    '/blog/cheapest-way-to-get-pipiads',
-    '/blog/cheapest-way-to-get-kalodata',
-    '/blog/audifort-hearing-support-review-guide',
-    '/blog/ai-podcast-video-repurposing-workflow',
-    '/blog/tiktok-shop-beginner-tools-budget',
-    '/blog/faceless-channel-tools-stack-budget',
-    '/blog/start-tiktok-ad-agency-tools-budget',
+  const blogPosts = [
+    { slug: '50-viral-hook-ideas-swipe-file', lastModified: '2026-08-16' },
+    { slug: 'best-group-buy-tools-alternative-safe', lastModified: '2026-09-01' },
+    { slug: 'cheapest-way-to-get-canva-pro-safe', lastModified: '2026-10-03' },
+    { slug: 'how-to-get-chatgpt-plus-cheaper', lastModified: '2026-09-15' },
+    { slug: 'cheapest-way-to-get-kalodata', lastModified: '2026-10-03' },
+    { slug: 'cheapest-way-to-get-pipiads', lastModified: '2026-10-03' },
+    { slug: 'opusclip-review-cheapest-pricing', lastModified: '2026-10-01' },
+    { slug: 'best-faceless-youtube-channel-tools', lastModified: '2026-08-20' },
+    { slug: 'ai-podcast-repurposing-guide', lastModified: '2026-08-22' },
+    { slug: 'tiktok-shop-affiliate-starter-tools', lastModified: '2026-08-25' },
+    { slug: 'how-to-start-short-form-ad-agency', lastModified: '2026-08-28' },
+    { slug: 'work-from-home-social-media-jobs', lastModified: '2026-09-05' },
+    { slug: 'how-to-fix-tiktok-shadowban-views', lastModified: '2026-09-10' },
+    { slug: 'best-ai-doodle-video-generators', lastModified: '2026-09-12' },
+    { slug: 'toolsuite-group-buy-review', lastModified: '2026-09-18' },
+    { slug: 'get-paid-to-clip-videos-online', lastModified: '2026-09-22' },
+    { slug: 'the-boomers-simple-guide-to-smartphone-sanity', lastModified: '2026-08-18' },
+    { slug: 'passive-digital-income-short-video', lastModified: '2026-09-08' },
   ];
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: route.startsWith('/blog') ? 'monthly' : 'weekly',
-    priority: route === '' ? 1.0 : route.startsWith('/blog') ? 0.7 : 0.8,
+  const blogRoutes = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.lastModified),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
   }));
+
+  const coreRoutes = [
+    {
+      url: `${baseUrl}`,
+      lastModified: new Date('2026-10-01'),
+      changeFrequency: 'weekly' as const,
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date('2026-10-03'),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/tiktok-downloader`,
+      lastModified: new Date('2026-09-01'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/instagram-reels-downloader`,
+      lastModified: new Date('2026-09-01'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/youtube-shorts-downloader`,
+      lastModified: new Date('2026-09-01'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/x-video-downloader`,
+      lastModified: new Date('2026-09-01'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+  ];
+
+  return [...coreRoutes, ...blogRoutes];
 }
