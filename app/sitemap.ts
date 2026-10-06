@@ -3,11 +3,9 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.socialsfetcher.com';
 
-  // Exactly matches all 22 article folders in your GitHub repository
   const blogPosts = [
     { slug: '50-viral-hook-ideas-swipe-file', lastModified: '2026-08-16' },
     { slug: 'ai-podcast-video-repurposing-workflow', lastModified: '2026-08-22' },
-    { slug: 'audifort-hearing-support-review-guide', lastModified: '2026-09-01' },
     { slug: 'best-group-buy-tools-alternative-safe', lastModified: '2026-10-04' },
     { slug: 'best-social-media-scheduling-tools-solo-creators', lastModified: '2026-10-06' },
     { slug: 'best-subtitle-caption-generators-short-videos', lastModified: '2026-10-05' },
