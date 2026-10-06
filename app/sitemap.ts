@@ -24,6 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'passive-digital-income-short-video', lastModified: '2026-09-14' },
     { slug: 'turn-livestreams-into-vertical-clips', lastModified: '2026-10-05' },
     { slug: 'best-subtitle-caption-generators-short-videos', lastModified: '2026-10-05' },
+    { slug: 'best-social-media-scheduling-tools-solo-creators', lastModified: '2026-10-06' },
+    { slug: 'best-teleprompter-app-vertical-video-iphone-android', lastModified: '2026-10-06' },
   ];
 
   const blogRoutes = blogPosts.map((post) => ({
