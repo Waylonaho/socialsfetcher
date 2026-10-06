@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
-
 export const metadata: Metadata = {
-  title: 'SocialsFetcher — Free Social Media Video Downloader',
-  description: 'Download clean, watermark-free videos from TikTok, Instagram Reels, YouTube Shorts, and X in HD.',
-  keywords: ['video downloader', 'tiktok downloader', 'instagram reels downloader', 'youtube shorts saver'],
-  authors: [{ name: 'SocialsFetcher' }],
-  viewport: 'width=device-width, initial-scale=1',
+  metadataBase: new URL('https://www.socialsfetcher.com'),
+  title: {
+    default: 'SocialsFetcher - Free Social Media Video Downloader',
+    template: '%s | SocialsFetcher',
+  },
+  description: 'Download social media videos from TikTok, Instagram, YouTube Shorts, and X without watermarks in high quality.',
+  alternates: {
+    canonical: './',
+  },
 };
 
 export default function RootLayout({
@@ -18,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} bg-slate-950 text-slate-100 antialiased font-sans`}>
+    <html lang="en">
+      <body className="bg-slate-950 text-slate-100 min-h-screen antialiased">
         {children}
       </body>
     </html>
