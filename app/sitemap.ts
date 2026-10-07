@@ -25,6 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'tiktok-shop-beginner-tools-budget', lastModified: '2026-10-04' },
     { slug: 'turn-livestreams-into-vertical-clips', lastModified: '2026-10-05' },
     { slug: 'turn-plain-video-into-ai-doodle-explainer', lastModified: '2026-09-12' },
+    { slug: 'why-cross-posted-video-looks-blurry-fix', lastModified: '2026-10-07' },
+    { slug: 'repurpose-youtube-short-to-reels-and-tiktok', lastModified: '2026-10-07' },
   ];
 
   const blogRoutes = blogPosts.map((post) => ({
@@ -37,13 +39,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const coreRoutes = [
     {
       url: `${baseUrl}`,
-      lastModified: new Date('2026-10-06'),
+      lastModified: new Date('2026-10-07'),
       changeFrequency: 'daily' as const,
       priority: 1.0,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date('2026-10-06'),
+      lastModified: new Date('2026-10-07'),
       changeFrequency: 'daily' as const,
       priority: 0.9,
     },
