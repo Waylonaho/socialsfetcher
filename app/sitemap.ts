@@ -29,6 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'repurpose-youtube-short-to-reels-and-tiktok', lastModified: '2026-10-07' },
     { slug: 'how-to-save-tiktok-video-before-posting', lastModified: '2026-10-08' },
     { slug: 'format-vertical-video-tiktok-reels-shorts-no-black-bars', lastModified: '2026-10-08' },
+    { slug: 'how-to-save-an-x-video-with-permission', lastModified: '2026-10-09' },
+    { slug: 'how-to-extract-audio-from-youtube-shorts-safely', lastModified: '2026-10-09' },
   ];
 
   const blogRoutes = blogPosts.map((post) => ({
@@ -41,13 +43,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const coreRoutes = [
     {
       url: `${baseUrl}`,
-      lastModified: new Date('2026-10-08'),
+      lastModified: new Date('2026-10-09'),
       changeFrequency: 'daily' as const,
       priority: 1.0,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date('2026-10-08'),
+      lastModified: new Date('2026-10-09'),
       changeFrequency: 'daily' as const,
       priority: 0.9,
     },
