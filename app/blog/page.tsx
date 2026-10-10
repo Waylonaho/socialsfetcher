@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Creator Guides, Workflows & Tool Reviews | SocialsFetcher',
   description: 'Explore in-depth guides on video repurposing, viral growth frameworks, software comparisons, and creator monetization workflows.',
   alternates: {
-    canonical: 'https://socialsfetcher.com/blog',
+    canonical: 'https://www.socialsfetcher.com/blog',
   },
 };
 
