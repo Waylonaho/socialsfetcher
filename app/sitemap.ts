@@ -33,6 +33,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'how-to-extract-audio-from-youtube-shorts-safely', lastModified: '2026-10-09' },
     { slug: 'how-to-save-tiktok-draft-to-camera-roll', lastModified: '2026-10-10' },
     { slug: 'how-to-extract-audio-from-instagram-reels-mp3', lastModified: '2026-10-10' },
+    { slug: 'how-to-automatically-save-instagram-stories-camera-roll-archive', lastModified: '2026-10-11' },
+    { slug: 'how-to-extract-audio-from-tiktok-video-mp3', lastModified: '2026-10-11' },
   ];
 
   const blogRoutes = blogPosts.map((post) => ({
@@ -45,13 +47,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const coreRoutes = [
     {
       url: `${baseUrl}`,
-      lastModified: new Date('2026-10-10'),
+      lastModified: new Date('2026-10-11'),
       changeFrequency: 'daily' as const,
       priority: 1.0,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date('2026-10-10'),
+      lastModified: new Date('2026-10-11'),
       changeFrequency: 'daily' as const,
       priority: 0.9,
     },
