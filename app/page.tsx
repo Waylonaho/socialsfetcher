@@ -14,9 +14,8 @@ export default function HomePage() {
 
   // Live Partner & Affiliate Links
   const OPUSCLIP_LINK = "https://opus.pro/?via=waylon";
-  const WRITING_JOBS_BANNER_LINK = "https://2b8aauomsgsvvl2acqagzdx4tu.hop.clickbank.net?tid=homepage_top_bar";
-  const WRITING_JOBS_CARD_LINK = "https://2b8aauomsgsvvl2acqagzdx4tu.hop.clickbank.net?tid=site_result_card";
-  const WRITING_JOBS_ERROR_LINK = "https://2b8aauomsgsvvl2acqagzdx4tu.hop.clickbank.net?tid=downloader_failure_recommendation";
+  const WRITING_JOBS_CARD_LINK = "https://2b8aauomsgsvvl2acqagzdx4tu.hop.clickbank.net?tid=homepage_result_card";
+  const WRITING_JOBS_ERROR_LINK = "https://2b8aauomsgsvvl2acqagzdx4tu.hop.clickbank.net?tid=homepage_error_recommendation";
   const CPAGRIP_LOCKER_LINK = "https://singingfiles.com/1908352";
 
   const handleFetch = async (e: React.FormEvent) => {
@@ -31,7 +30,7 @@ export default function HomePage() {
       const response = await fetch(`https://socialsfetcher-api.onrender.com/api/fetch?url=${encodeURIComponent(url.trim())}`);
       
       if (!response.ok) {
-        throw new Error('Downloader service timed out or video is private/unsupported.');
+        throw new Error('Downloader service timed out or video stream is private/unsupported.');
       }
 
       const data = await response.json();
@@ -45,7 +44,7 @@ export default function HomePage() {
         downloadUrl: data.downloadUrl
       });
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : 'Failed to retrieve media. Please check the URL and try again.';
+      const msg = err instanceof Error ? err.message : 'Failed to retrieve media. Please verify the URL and try again.';
       setError(msg);
       setResult(null);
     } finally {
@@ -54,6 +53,7 @@ export default function HomePage() {
   };
 
   const handleDownload = (downloadUrl: string) => {
+    // Pure file trigger without unrequested background popups or deceptive redirects
     window.location.href = downloadUrl;
   };
 
@@ -64,18 +64,20 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 font-sans">
       
-      {/* 1. Top Announcement Bar */}
-      <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 border-b border-indigo-500/30 py-2.5 px-4 text-center text-xs text-slate-200">
+      {/* 1. Contextual, Compliant Announcement Bar */}
+      <div className="bg-gradient-to-r from-purple-950 via-slate-900 to-indigo-950 border-b border-purple-500/30 py-2.5 px-4 text-center text-xs text-slate-200">
         <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
-          <span className="bg-amber-500 text-slate-950 font-black px-2 py-0.5 rounded text-[10px] uppercase">Hiring</span>
-          <span>Earn $25–$50/Hr reviewing social media apps & organizing video clips from home.</span>
+          <span className="bg-purple-600 text-white font-black px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">
+            Creator Workflow
+          </span>
+          <span>Turn long YouTube videos and livestreams into viral Shorts with 1 click.</span>
           <a 
-            href={WRITING_JOBS_BANNER_LINK} 
+            href={OPUSCLIP_LINK} 
             target="_blank" 
             rel="noopener noreferrer sponsored" 
-            className="font-bold text-amber-400 hover:underline underline-offset-2 ml-1"
+            className="font-bold text-purple-400 hover:underline underline-offset-2 ml-1"
           >
-            Apply Now →
+            Try OpusClip Free →
           </a>
         </div>
       </div>
@@ -114,9 +116,14 @@ export default function HomePage() {
         <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 tracking-tight">
           Download Social Media Videos <span className="text-indigo-500">Without Watermarks</span>
         </h1>
-        <p className="text-slate-400 mb-8 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className="text-slate-400 mb-4 max-w-2xl mx-auto text-sm sm:text-base">
           Paste your TikTok, Instagram Reel, YouTube Short, or X video link below to extract clean HD media instantly.
         </p>
+
+        {/* Authorized Use & Terms Notice */}
+        <div className="max-w-xl mx-auto mb-8 p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-[11px] text-slate-400">
+          🛡️ Please only download or archive content you own or have explicit creator permission to repurpose.
+        </div>
 
         {/* Input Form */}
         <form onSubmit={handleFetch} className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto mb-8">
@@ -216,7 +223,7 @@ export default function HomePage() {
           </div>
         )}
 
-        {/* 2. Honest Error Box + Monetized ClickBank Sponsor Unit */}
+        {/* 2. Honest Error Box + Disclosed Sponsor Unit */}
         {error && (
           <div className="max-w-xl mx-auto my-6 space-y-4 text-left">
             <div className="p-5 rounded-2xl bg-slate-900 border border-red-500/40 shadow-xl">
@@ -263,78 +270,4 @@ export default function HomePage() {
                   Check Remote Job Openings →
                 </a>
                 <span className="text-[10px] text-slate-400">
-                  Advertisement: We receive a commission if you qualify.
-                </span>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* 3. OpusClip Promo Showcase Banner */}
-        <section className="my-10 max-w-2xl mx-auto">
-          <a
-            href={OPUSCLIP_LINK}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            className="block p-6 rounded-2xl bg-gradient-to-r from-purple-950 via-slate-900 to-slate-900 border border-purple-500/40 hover:border-purple-400 text-left transition shadow-2xl group"
-          >
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-bold text-purple-400 bg-purple-950 border border-purple-800 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                AI Repurposing Engine
-              </span>
-              <span className="text-xs font-bold text-purple-400 group-hover:translate-x-1 transition-transform">
-                Try OpusClip Free ⚡
-              </span>
-            </div>
-            <h3 className="text-lg font-bold text-white mb-2">
-              Turn Any Long Video into Viral Shorts, Reels & TikToks
-            </h3>
-            <p className="text-xs text-slate-400 leading-relaxed mb-4">
-              OpusClip uses AI to curate viral moments from long footage, automatically adding dynamic animated captions, AI B-roll, and auto-framing for 9:16 layout.
-            </p>
-            <div className="inline-block text-xs font-bold bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded-lg transition">
-              Repurpose Videos with AI Free →
-            </div>
-          </a>
-        </section>
-
-        {/* Internal Linking Hub */}
-        <section className="py-12 bg-slate-900/40 border-t border-slate-800/80 rounded-2xl">
-          <h2 className="text-xl font-bold mb-6 text-center text-slate-200">Supported Media Tools</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 px-4">
-            <Link href="/tiktok/download/no-watermark" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
-              <div className="text-xl mb-1">🎵</div>
-              <h3 className="font-bold text-sm text-white">TikTok Downloader</h3>
-              <p className="text-xs text-slate-400 mt-1">Clean MP4 downloads without watermarks.</p>
-            </Link>
-            <Link href="/instagram/reels/downloader" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
-              <div className="text-xl mb-1">📸</div>
-              <h3 className="font-bold text-sm text-white">Instagram Reels Saver</h3>
-              <p className="text-xs text-slate-400 mt-1">Download original resolution Reels & Stories.</p>
-            </Link>
-            <Link href="/youtube/shorts/saver" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
-              <div className="text-xl mb-1">▶️</div>
-              <h3 className="font-bold text-sm text-white">YouTube Shorts Saver</h3>
-              <p className="text-xs text-slate-400 mt-1">Convert Shorts to 1080p MP4 or audio.</p>
-            </Link>
-            <Link href="/twitter/video/mp4" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
-              <div className="text-xl mb-1">🐦</div>
-              <h3 className="font-bold text-sm text-white">X / Twitter Saver</h3>
-              <p className="text-xs text-slate-400 mt-1">Save embedded video files from posts.</p>
-            </Link>
-            <Link href="/download/hd-4k" className="p-4 rounded-xl bg-slate-900 border border-amber-500/40 hover:border-amber-400 transition text-left bg-amber-500/5">
-              <div className="text-xl mb-1">⚡</div>
-              <h3 className="font-bold text-sm text-amber-400">4K PRO Downloader</h3>
-              <p className="text-xs text-slate-400 mt-1">Unlock high-bitrate 4K & batch downloads.</p>
-            </Link>
-          </div>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
-        <p>© 2026 SocialsFetcher.com — Free Online Media Utility. Please only download content you own or have permission to use.</p>
-      </footer>
-    </div>
-  );
-}
+                  Advertisement: We receive a commission if you qualify
