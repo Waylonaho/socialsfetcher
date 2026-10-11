@@ -10,10 +10,14 @@ export const metadata: Metadata = {
 };
 
 const guideCategories = [
-
   {
     category: 'Troubleshooting & Saving Your Own Media',
     guides: [
+      {
+        title: 'How to Automatically Save Instagram Stories to Camera Roll & Archive',
+        slug: 'how-to-automatically-save-instagram-stories-camera-roll-archive',
+        desc: 'Configure auto-save to phone gallery and cloud archive to preserve master quality.',
+      },
       {
         title: 'How to Save Your Own TikTok Video to Camera Roll Before Posting',
         slug: 'how-to-save-tiktok-video-before-posting',
@@ -49,6 +53,11 @@ const guideCategories = [
   {
     category: 'Audio Extraction & Platform Syndication',
     guides: [
+      {
+        title: 'How to Extract Audio from TikTok Videos as Clean MP3 Files',
+        slug: 'how-to-extract-audio-from-tiktok-video-mp3',
+        desc: 'Isolate voice tracks, dialogue, and original trending audio as 320 kbps MP3 files.',
+      },
       {
         title: 'How to Save an X Video You Have Permission to Use',
         slug: 'how-to-save-an-x-video-with-permission',
