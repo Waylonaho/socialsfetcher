@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const guideCategories = [
+
   {
     category: 'Troubleshooting & Saving Your Own Media',
     guides: [
