@@ -53,7 +53,6 @@ export default function HomePage() {
   };
 
   const handleDownload = (downloadUrl: string) => {
-    // Pure file trigger without unrequested background popups or deceptive redirects
     window.location.href = downloadUrl;
   };
 
@@ -64,7 +63,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 font-sans">
       
-      {/* 1. Contextual, Compliant Announcement Bar */}
+      {/* 1. Compliant Announcement Bar */}
       <div className="bg-gradient-to-r from-purple-950 via-slate-900 to-indigo-950 border-b border-purple-500/30 py-2.5 px-4 text-center text-xs text-slate-200">
         <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
           <span className="bg-purple-600 text-white font-black px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">
@@ -270,4 +269,78 @@ export default function HomePage() {
                   Check Remote Job Openings →
                 </a>
                 <span className="text-[10px] text-slate-400">
-                  Advertisement: We receive a commission if you qualify
+                  Advertisement: We receive a commission if you qualify.
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 3. OpusClip Promo Showcase Banner */}
+        <section className="my-10 max-w-2xl mx-auto">
+          <a
+            href={OPUSCLIP_LINK}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="block p-6 rounded-2xl bg-gradient-to-r from-purple-950 via-slate-900 to-slate-900 border border-purple-500/40 hover:border-purple-400 text-left transition shadow-2xl group"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-bold text-purple-400 bg-purple-950 border border-purple-800 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                AI Repurposing Engine
+              </span>
+              <span className="text-xs font-bold text-purple-400 group-hover:translate-x-1 transition-transform">
+                Try OpusClip Free ⚡
+              </span>
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2">
+              Turn Any Long Video into Viral Shorts, Reels & TikToks
+            </h3>
+            <p className="text-xs text-slate-400 leading-relaxed mb-4">
+              OpusClip uses AI to curate viral moments from long footage, automatically adding dynamic animated captions, AI B-roll, and auto-framing for 9:16 layout.
+            </p>
+            <div className="inline-block text-xs font-bold bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded-lg transition">
+              Repurpose Videos with AI Free →
+            </div>
+          </a>
+        </section>
+
+        {/* Internal Linking Hub */}
+        <section className="py-12 bg-slate-900/40 border-t border-slate-800/80 rounded-2xl">
+          <h2 className="text-xl font-bold mb-6 text-center text-slate-200">Supported Media Tools</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 px-4">
+            <Link href="/tiktok/download/no-watermark" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
+              <div className="text-xl mb-1">🎵</div>
+              <h3 className="font-bold text-sm text-white">TikTok Downloader</h3>
+              <p className="text-xs text-slate-400 mt-1">Clean MP4 downloads without watermarks.</p>
+            </Link>
+            <Link href="/instagram/reels/downloader" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
+              <div className="text-xl mb-1">📸</div>
+              <h3 className="font-bold text-sm text-white">Instagram Reels Saver</h3>
+              <p className="text-xs text-slate-400 mt-1">Download original resolution Reels & Stories.</p>
+            </Link>
+            <Link href="/youtube/shorts/saver" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
+              <div className="text-xl mb-1">▶️</div>
+              <h3 className="font-bold text-sm text-white">YouTube Shorts Saver</h3>
+              <p className="text-xs text-slate-400 mt-1">Convert Shorts to 1080p MP4 or audio.</p>
+            </Link>
+            <Link href="/twitter/video/mp4" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
+              <div className="text-xl mb-1">🐦</div>
+              <h3 className="font-bold text-sm text-white">X / Twitter Saver</h3>
+              <p className="text-xs text-slate-400 mt-1">Save embedded video files from posts.</p>
+            </Link>
+            <Link href="/download/hd-4k" className="p-4 rounded-xl bg-slate-900 border border-amber-500/40 hover:border-amber-400 transition text-left bg-amber-500/5">
+              <div className="text-xl mb-1">⚡</div>
+              <h3 className="font-bold text-sm text-amber-400">4K PRO Downloader</h3>
+              <p className="text-xs text-slate-400 mt-1">Unlock high-bitrate 4K & batch downloads.</p>
+            </Link>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+        <p>© 2026 SocialsFetcher.com — Free Online Media Utility. Please only download content you own or have permission to use.</p>
+      </footer>
+    </div>
+  );
+}
