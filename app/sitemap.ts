@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'tiktok-shop-beginner-tools-budget', lastModified: '2026-10-04' },
     { slug: 'turn-livestreams-into-vertical-clips', lastModified: '2026-10-05' },
     { slug: 'turn-plain-video-into-ai-doodle-explainer', lastModified: '2026-09-12' },
-    { slug: 'why-cross-posted-video-looks-blurry-fix', lastModified: '2026-10-07' },
+    { slug: 'why-cross-posted-video-looks-blurry-fix', lastModified: '2026-10-13' },
     { slug: 'repurpose-youtube-short-to-reels-and-tiktok', lastModified: '2026-10-07' },
     { slug: 'how-to-save-tiktok-video-before-posting', lastModified: '2026-10-08' },
     { slug: 'format-vertical-video-tiktok-reels-shorts-no-black-bars', lastModified: '2026-10-08' },
@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'how-to-extract-audio-from-tiktok-video-mp3', lastModified: '2026-10-11' },
     { slug: 'tiktok-video-saved-not-showing-in-gallery', lastModified: '2026-10-12' },
     { slug: 'how-to-save-x-twitter-video-with-audio-iphone', lastModified: '2026-10-12' },
+    { slug: 'how-to-fix-tiktok-audio-sync-lag-after-download', lastModified: '2026-10-13' },
   ];
 
   const blogRoutes = blogPosts.map((post) => ({
@@ -49,13 +50,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const coreRoutes = [
     {
       url: `${baseUrl}`,
-      lastModified: new Date('2026-10-12'),
+      lastModified: new Date('2026-10-13'),
       changeFrequency: 'daily' as const,
       priority: 1.0,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date('2026-10-12'),
+      lastModified: new Date('2026-10-13'),
       changeFrequency: 'daily' as const,
       priority: 0.9,
     },
