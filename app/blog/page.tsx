@@ -14,6 +14,11 @@ const guideCategories = [
     category: 'Troubleshooting & Saving Your Own Media',
     guides: [
       {
+        title: 'Why Your Saved Instagram Reel Has No Music (and the Creator Fix)',
+        slug: 'why-saved-instagram-reel-has-no-music-fix',
+        desc: 'Diagnose why Instagram strips background audio when saving to device and keep clean masters.',
+      },
+      {
         title: 'Why Your Cross-Posted Video Looks Blurry (and How to Fix It)',
         slug: 'why-cross-posted-video-looks-blurry-fix',
         desc: 'Recommended master bitrate, resolution, and color profiles to stop platform compression.',
