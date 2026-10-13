@@ -38,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'tiktok-video-saved-not-showing-in-gallery', lastModified: '2026-10-12' },
     { slug: 'how-to-save-x-twitter-video-with-audio-iphone', lastModified: '2026-10-12' },
     { slug: 'how-to-fix-tiktok-audio-sync-lag-after-download', lastModified: '2026-10-13' },
+    { slug: 'why-saved-instagram-reel-has-no-music-fix', lastModified: '2026-10-13' },
   ];
 
   const blogRoutes = blogPosts.map((post) => ({
