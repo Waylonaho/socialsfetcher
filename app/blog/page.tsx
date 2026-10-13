@@ -14,6 +14,16 @@ const guideCategories = [
     category: 'Troubleshooting & Saving Your Own Media',
     guides: [
       {
+        title: 'Why Your Cross-Posted Video Looks Blurry (and How to Fix It)',
+        slug: 'why-cross-posted-video-looks-blurry-fix',
+        desc: 'Recommended master bitrate, resolution, and color profiles to stop platform compression.',
+      },
+      {
+        title: 'TikTok Video Saved but Not Showing in Gallery? How to Fix It',
+        slug: 'tiktok-video-saved-not-showing-in-gallery',
+        desc: 'Locate missing MP4 downloads across Android DCIM/Movies folders and iOS Photo albums.',
+      },
+      {
         title: 'How to Automatically Save Instagram Stories to Camera Roll & Archive',
         slug: 'how-to-automatically-save-instagram-stories-camera-roll-archive',
         desc: 'Configure auto-save to phone gallery and cloud archive to preserve master quality.',
@@ -27,11 +37,6 @@ const guideCategories = [
         title: 'How to Save a TikTok Draft to Camera Roll (Without Posting Publicly)',
         slug: 'how-to-save-tiktok-draft-to-camera-roll',
         desc: 'Export private drafts directly to device storage safely.',
-      },
-      {
-        title: 'Why Your Cross-Posted Video Looks Blurry (and How to Fix It)',
-        slug: 'why-cross-posted-video-looks-blurry-fix',
-        desc: 'Recommended master bitrate, resolution, and color profiles to stop platform compression.',
       },
       {
         title: 'How to Format Vertical Video for TikTok, Reels & Shorts Without Black Bars',
@@ -53,6 +58,16 @@ const guideCategories = [
   {
     category: 'Audio Extraction & Platform Syndication',
     guides: [
+      {
+        title: 'How to Fix TikTok Audio Sync Lag After Download (Audio Drift)',
+        slug: 'how-to-fix-tiktok-audio-sync-lag-after-download',
+        desc: 'Fix variable frame rate desynchronization in CapCut, Premiere, and mobile galleries.',
+      },
+      {
+        title: 'How to Save an X (Twitter) Video with Audio on iPhone',
+        slug: 'how-to-save-x-twitter-video-with-audio-iphone',
+        desc: 'Fix the muted Safari download glitch and export full MP4 files with sound directly to Photos.',
+      },
       {
         title: 'How to Extract Audio from TikTok Videos as Clean MP3 Files',
         slug: 'how-to-extract-audio-from-tiktok-video-mp3',
