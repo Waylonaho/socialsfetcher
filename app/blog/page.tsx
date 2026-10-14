@@ -14,6 +14,16 @@ const guideCategories = [
     category: 'Troubleshooting & Saving Your Own Media',
     guides: [
       {
+        title: 'How to Back Up All YouTube Shorts with Google Takeout',
+        slug: 'how-to-backup-youtube-shorts-google-takeout',
+        desc: 'Export your entire Short library in original quality bulk zips.',
+      },
+      {
+        title: 'How to Extract YouTube Shorts Thumbnails in Full Resolution',
+        slug: 'how-to-extract-youtube-shorts-thumbnail-hd',
+        desc: 'Download clean 1080p poster frames and cover images without UI overlays.',
+      },
+      {
         title: 'Why Your Saved Instagram Reel Has No Music (and the Creator Fix)',
         slug: 'why-saved-instagram-reel-has-no-music-fix',
         desc: 'Diagnose why Instagram strips background audio when saving to device and keep clean masters.',
