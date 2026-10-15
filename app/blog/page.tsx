@@ -14,6 +14,11 @@ const guideCategories = [
     category: 'Troubleshooting & Saving Your Own Media',
     guides: [
       {
+        title: "Why Can't I Download a Video from X? (Account Settings & Fixes)",
+        slug: 'why-cant-i-download-a-video-from-x',
+        desc: 'Diagnose private accounts, creator download restrictions, and authorized sharing options.',
+      },
+      {
         title: 'How to Back Up All YouTube Shorts with Google Takeout',
         slug: 'how-to-backup-youtube-shorts-google-takeout',
         desc: 'Export your entire Short library in original quality bulk zips.',
@@ -73,6 +78,11 @@ const guideCategories = [
   {
     category: 'Audio Extraction & Platform Syndication',
     guides: [
+      {
+        title: 'How to Extract Audio from X (Twitter) Videos as Clean MP3 Files',
+        slug: 'how-to-extract-audio-from-x-twitter-video-mp3',
+        desc: 'Isolate speech, dialogue, and audio clips from X videos as high-bitrate MP3 or WAV files.',
+      },
       {
         title: 'How to Fix TikTok Audio Sync Lag After Download (Audio Drift)',
         slug: 'how-to-fix-tiktok-audio-sync-lag-after-download',
@@ -236,7 +246,7 @@ export default function BlogHubPage() {
       <main className="flex-grow max-w-5xl mx-auto px-4 py-12 text-left">
         <div className="mb-10 text-center sm:text-left">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
-            Creator Resource Library & Workflows
+            Creator Resource Library &amp; Workflows
           </h1>
           <p className="text-slate-400 text-sm sm:text-base max-w-2xl">
             Practical guides covering vertical video optimization, troubleshooting platform saving bugs, audio extraction, and creator software.
