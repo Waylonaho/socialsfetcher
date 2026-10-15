@@ -41,6 +41,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'why-saved-instagram-reel-has-no-music-fix', lastModified: '2026-10-13' },
     { slug: 'how-to-backup-youtube-shorts-google-takeout', lastModified: '2026-10-14' },
     { slug: 'how-to-extract-youtube-shorts-thumbnail-hd', lastModified: '2026-10-14' },
+    { slug: 'why-cant-i-download-a-video-from-x', lastModified: '2026-10-15' },
+    { slug: 'how-to-extract-audio-from-x-twitter-video-mp3', lastModified: '2026-10-15' },
   ];
 
   const blogRoutes = blogPosts.map((post) => ({
@@ -53,13 +55,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const coreRoutes = [
     {
       url: `${baseUrl}`,
-      lastModified: new Date('2026-10-14'),
+      lastModified: new Date('2026-10-15'),
       changeFrequency: 'daily' as const,
       priority: 1.0,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date('2026-10-14'),
+      lastModified: new Date('2026-10-15'),
       changeFrequency: 'daily' as const,
       priority: 0.9,
     },
