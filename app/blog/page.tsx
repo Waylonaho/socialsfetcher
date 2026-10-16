@@ -14,7 +14,12 @@ const guideCategories = [
     category: 'Troubleshooting & Saving Your Own Media',
     guides: [
       {
-        title: "Why Can't I Download a Video from X? (Account Settings & Fixes)",
+        title: 'How to Save an Instagram Story After 24 Hours from Archive',
+        slug: 'how-to-save-instagram-story-after-24-hours-archive',
+        desc: 'Extract expired Stories back to camera roll, handle muted music, and preserve quality.',
+      },
+      {
+        title: 'Why Can’t I Download a Video from X? (Account Settings & Fixes)',
         slug: 'why-cant-i-download-a-video-from-x',
         desc: 'Diagnose private accounts, creator download restrictions, and authorized sharing options.',
       },
@@ -78,6 +83,11 @@ const guideCategories = [
   {
     category: 'Audio Extraction & Platform Syndication',
     guides: [
+      {
+        title: 'How to Download YouTube Shorts as MP4 1080p Without Watermark',
+        slug: 'how-to-download-youtube-shorts-mp4-1080p-no-watermark',
+        desc: 'Download clean uncompressed 1080p master files of your Shorts for cross-platform repurposing.',
+      },
       {
         title: 'How to Extract Audio from X (Twitter) Videos as Clean MP3 Files',
         slug: 'how-to-extract-audio-from-x-twitter-video-mp3',
