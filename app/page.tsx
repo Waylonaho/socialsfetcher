@@ -63,11 +63,11 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 font-sans">
       
-      {/* 1. Compliant Announcement Bar */}
+      {/* 1. Compliant Top Announcement Bar with Nearby FTC Disclosure */}
       <div className="bg-gradient-to-r from-purple-950 via-slate-900 to-indigo-950 border-b border-purple-500/30 py-2.5 px-4 text-center text-xs text-slate-200">
         <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap">
           <span className="bg-purple-600 text-white font-black px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">
-            Creator Workflow
+            Partner Tool
           </span>
           <span>Turn long YouTube videos and livestreams into viral Shorts with 1 click.</span>
           <a 
@@ -78,6 +78,9 @@ export default function HomePage() {
           >
             Try OpusClip Free →
           </a>
+          <span className="text-[10px] text-slate-400">
+            (We may earn a commission if you sign up, at no extra cost to you.)
+          </span>
         </div>
       </div>
 
@@ -93,7 +96,7 @@ export default function HomePage() {
             <Link href="/youtube/shorts/saver" className="hover:text-indigo-400 transition">YouTube</Link>
             <Link href="/twitter/video/mp4" className="hover:text-indigo-400 transition">X / Twitter</Link>
             <Link href="/blog" className="hover:text-indigo-400 transition text-slate-300">
-              Blog & Guides
+              Blog &amp; Guides
             </Link>
             <a 
               href={OPUSCLIP_LINK} 
@@ -143,12 +146,12 @@ export default function HomePage() {
           </button>
         </form>
 
-        {/* Loading Indicator */}
+        {/* Loading Indicator with Explicit Disclosure */}
         {loading && (
           <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 max-w-xl mx-auto my-6 text-left shadow-xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="animate-spin h-5 w-5 border-2 border-indigo-500 border-t-transparent rounded-full"></div>
-              <p className="font-semibold text-sm text-indigo-400">Verifying video source & extracting MP4 stream...</p>
+              <p className="font-semibold text-sm text-indigo-400">Verifying video source &amp; extracting MP4 stream...</p>
             </div>
             
             <a 
@@ -166,9 +169,12 @@ export default function HomePage() {
               <h4 className="font-bold text-white text-sm sm:text-base">
                 Turn long YouTube videos into 10 viral Shorts with 1 click
               </h4>
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-slate-400 mt-1 mb-2">
                 OpusClip automatically extracts high-virality clips, adds animated captions, and generates AI B-roll.
               </p>
+              <span className="text-[10px] text-slate-500 block">
+                Sponsored: We may earn a commission if you sign up through this link.
+              </span>
             </a>
           </div>
         )}
@@ -193,7 +199,7 @@ export default function HomePage() {
                 onClick={triggerCPAGripLocker}
                 className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold border border-amber-500/30 transition text-sm text-center flex items-center justify-center gap-2"
               >
-                🔒 Unlock 4K Ultra-HD & Bulk Batch Download
+                🔒 Unlock 4K Ultra-HD &amp; Bulk Batch Download
               </button>
             </div>
 
@@ -205,7 +211,7 @@ export default function HomePage() {
                 <span className="text-[10px] text-slate-500">Sponsored</span>
               </div>
               <h4 className="font-bold text-white text-sm">
-                Get Paid $25–$50/Hr to Manage Social Accounts & Edit Clips
+                Get Paid $25–$50/Hr to Manage Social Accounts &amp; Edit Clips
               </h4>
               <p className="text-xs text-slate-400 mt-1 mb-3">
                 Top companies are hiring remote workers to write social posts, organize video content, and manage accounts online.
@@ -218,6 +224,9 @@ export default function HomePage() {
               >
                 Take 1-Minute Qualification Quiz →
               </a>
+              <span className="text-[10px] text-slate-500 block text-center mt-2">
+                Advertisement: We receive a commission if you qualify.
+              </span>
             </div>
           </div>
         )}
@@ -276,36 +285,41 @@ export default function HomePage() {
           </div>
         )}
 
-        {/* 3. OpusClip Promo Showcase Banner */}
+        {/* 3. OpusClip Promo Showcase Banner with Nearby Commission Notice */}
         <section className="my-10 max-w-2xl mx-auto">
-          <a
-            href={OPUSCLIP_LINK}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            className="block p-6 rounded-2xl bg-gradient-to-r from-purple-950 via-slate-900 to-slate-900 border border-purple-500/40 hover:border-purple-400 text-left transition shadow-2xl group"
-          >
+          <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950 via-slate-900 to-slate-900 border border-purple-500/40 text-left transition shadow-2xl">
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs font-bold text-purple-400 bg-purple-950 border border-purple-800 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                 AI Repurposing Engine
               </span>
-              <span className="text-xs font-bold text-purple-400 group-hover:translate-x-1 transition-transform">
-                Try OpusClip Free ⚡
+              <span className="text-xs text-slate-400">
+                Partner Tool
               </span>
             </div>
             <h3 className="text-lg font-bold text-white mb-2">
-              Turn Any Long Video into Viral Shorts, Reels & TikToks
+              Turn Any Long Video into Viral Shorts, Reels &amp; TikToks
             </h3>
             <p className="text-xs text-slate-400 leading-relaxed mb-4">
               OpusClip uses AI to curate viral moments from long footage, automatically adding dynamic animated captions, AI B-roll, and auto-framing for 9:16 layout.
             </p>
-            <div className="inline-block text-xs font-bold bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded-lg transition">
-              Repurpose Videos with AI Free →
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 border-t border-slate-800/80">
+              <a
+                href={OPUSCLIP_LINK}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="inline-block text-center text-xs font-bold bg-purple-600 hover:bg-purple-500 text-white px-5 py-2.5 rounded-lg transition shadow-md"
+              >
+                Repurpose Videos with AI Free →
+              </a>
+              <span className="text-[10px] text-slate-400">
+                We may earn a commission if you sign up through this link, at no extra cost to you.
+              </span>
             </div>
-          </a>
+          </div>
         </section>
 
-        {/* Internal Linking Hub */}
-        <section className="py-12 bg-slate-900/40 border-t border-slate-800/80 rounded-2xl">
+        {/* Supported Media Tools Hub */}
+        <section className="py-12 bg-slate-900/40 border-t border-slate-800/80 rounded-2xl mb-8">
           <h2 className="text-xl font-bold mb-6 text-center text-slate-200">Supported Media Tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 px-4">
             <Link href="/tiktok/download/no-watermark" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
@@ -316,7 +330,7 @@ export default function HomePage() {
             <Link href="/instagram/reels/downloader" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
               <div className="text-xl mb-1">📸</div>
               <h3 className="font-bold text-sm text-white">Instagram Reels Saver</h3>
-              <p className="text-xs text-slate-400 mt-1">Download original resolution Reels & Stories.</p>
+              <p className="text-xs text-slate-400 mt-1">Download original resolution Reels &amp; Stories.</p>
             </Link>
             <Link href="/youtube/shorts/saver" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition text-left">
               <div className="text-xl mb-1">▶️</div>
@@ -331,7 +345,31 @@ export default function HomePage() {
             <Link href="/download/hd-4k" className="p-4 rounded-xl bg-slate-900 border border-amber-500/40 hover:border-amber-400 transition text-left bg-amber-500/5">
               <div className="text-xl mb-1">⚡</div>
               <h3 className="font-bold text-sm text-amber-400">4K PRO Downloader</h3>
-              <p className="text-xs text-slate-400 mt-1">Unlock high-bitrate 4K & batch downloads.</p>
+              <p className="text-xs text-slate-400 mt-1">Unlock high-bitrate 4K &amp; batch downloads.</p>
+            </Link>
+          </div>
+        </section>
+
+        {/* 4. Contextual Editorial Hub: Popular Creator Guides & Troubleshooting */}
+        <section className="py-10 bg-slate-900/30 border border-slate-800/80 rounded-2xl text-left px-6">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-bold text-slate-200">Popular Creator Guides &amp; Troubleshooting</h2>
+            <Link href="/blog" className="text-xs text-indigo-400 hover:underline font-semibold">
+              View All 40+ Guides →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            <Link href="/blog/why-cross-posted-video-looks-blurry-fix" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition">
+              <h3 className="font-bold text-white mb-1">Why Cross-Posted Videos Look Blurry</h3>
+              <p className="text-slate-400">Optimal master bitrates, Rec.709 color profiles, and 9:16 export specs.</p>
+            </Link>
+            <Link href="/blog/how-to-save-tiktok-video-before-posting" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition">
+              <h3 className="font-bold text-white mb-1">Save TikTok Before Posting</h3>
+              <p className="text-slate-400">Save raw, unwatermarked master clips directly to your phone gallery.</p>
+            </Link>
+            <Link href="/blog/why-saved-instagram-reel-has-no-music-fix" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition">
+              <h3 className="font-bold text-white mb-1">Saved Reel Has No Music?</h3>
+              <p className="text-slate-400">How to prevent Meta&apos;s copyright filter from stripping audio tracks on export.</p>
             </Link>
           </div>
         </section>
