@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '4K Ultra HD Social Video Downloader | SocialsFetcher',
+  title: '4K Ultra HD Social Video Downloader',
   description: 'Save social media clips in uncompressed 4K and 1080p high-bitrate quality without watermarks.',
   alternates: {
     canonical: 'https://www.socialsfetcher.com/download/hd-4k',
