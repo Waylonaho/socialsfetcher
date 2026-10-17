@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Creator Guides & Video Workflows | SocialsFetcher',
+  title: 'Creator Guides & Video Workflows',
   description: 'In-depth tutorials on video formatting, audio extraction, permission-aware saving, and creator tool stacks.',
   alternates: {
     canonical: 'https://www.socialsfetcher.com/blog',
