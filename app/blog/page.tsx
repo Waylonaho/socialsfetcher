@@ -14,6 +14,16 @@ const guideCategories = [
     category: 'Troubleshooting & Saving Your Own Media',
     guides: [
       {
+        title: 'How to Save Your Own Video from X to Your Phone',
+        slug: 'how-to-save-your-own-video-from-x-to-phone',
+        desc: 'Save your own posted videos from X directly to your iPhone or Android camera roll.',
+      },
+      {
+        title: 'How to Download Instagram Reels in 1080p Without Losing Quality',
+        slug: 'how-to-download-instagram-reels-1080p-high-quality',
+        desc: 'Extract uncompressed 1080p MP4 Reels without platform bitrate crushing or pixelation.',
+      },
+      {
         title: 'How to Save an Instagram Story After 24 Hours from Archive',
         slug: 'how-to-save-instagram-story-after-24-hours-archive',
         desc: 'Extract expired Stories back to camera roll, handle muted music, and preserve quality.',
