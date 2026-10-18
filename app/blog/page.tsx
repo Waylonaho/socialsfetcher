@@ -14,6 +14,11 @@ const guideCategories = [
     category: 'Troubleshooting & Saving Your Own Media',
     guides: [
       {
+        title: 'TikTok Save Video Button Missing on Your Own Video? How to Fix It',
+        slug: 'tiktok-save-button-missing-on-own-video',
+        desc: 'Fix privacy restrictions, processing delays, and recover clean MP4 files.',
+      },
+      {
         title: 'How to Save Your Own Video from X to Your Phone',
         slug: 'how-to-save-your-own-video-from-x-to-phone',
         desc: 'Save your own posted videos from X directly to your iPhone or Android camera roll.',
@@ -93,6 +98,11 @@ const guideCategories = [
   {
     category: 'Audio Extraction & Platform Syndication',
     guides: [
+      {
+        title: 'How to Download Audio from YouTube Shorts on iPhone',
+        slug: 'how-to-download-audio-from-youtube-shorts-iphone',
+        desc: 'Isolate clean audio, speech, and soundbites from YouTube Shorts on iOS into Files or Photos.',
+      },
       {
         title: 'How to Download YouTube Shorts as MP4 1080p Without Watermark',
         slug: 'how-to-download-youtube-shorts-mp4-1080p-no-watermark',
