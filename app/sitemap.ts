@@ -47,6 +47,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'how-to-download-youtube-shorts-mp4-1080p-no-watermark', lastModified: '2026-10-16' },
     { slug: 'how-to-save-your-own-video-from-x-to-phone', lastModified: '2026-10-17' },
     { slug: 'how-to-download-instagram-reels-1080p-high-quality', lastModified: '2026-10-17' },
+    { slug: 'tiktok-save-button-missing-on-own-video', lastModified: '2026-10-18' },
+    { slug: 'how-to-download-audio-from-youtube-shorts-iphone', lastModified: '2026-10-18' },
   ];
 
   const blogRoutes = blogPosts.map((post) => ({
@@ -59,13 +61,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const coreRoutes = [
     {
       url: `${baseUrl}`,
-      lastModified: new Date('2026-10-17'),
+      lastModified: new Date('2026-10-18'),
       changeFrequency: 'daily' as const,
       priority: 1.0,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date('2026-10-17'),
+      lastModified: new Date('2026-10-18'),
       changeFrequency: 'daily' as const,
       priority: 0.9,
     },
