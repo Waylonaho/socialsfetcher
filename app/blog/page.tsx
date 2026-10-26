@@ -14,6 +14,11 @@ const guideCategories = [
     category: 'Troubleshooting & Saving Your Own Media',
     guides: [
       {
+        title: 'How to Organize and Back Up Your Social Videos Across TikTok, Reels, and Shorts',
+        slug: 'how-to-organize-backup-social-videos-creator-vault',
+        desc: 'Copyable folder structure, ISO file-naming convention, and monthly creator backup checklist.',
+      },
+      {
         title: 'TikTok Save Video Button Missing on Your Own Video? How to Fix It',
         slug: 'tiktok-save-button-missing-on-own-video',
         desc: 'Fix privacy restrictions, processing delays, and recover clean MP4 files.',
@@ -163,6 +168,11 @@ const guideCategories = [
   {
     category: 'Creator Tool Stacks, Software & Production',
     guides: [
+      {
+        title: 'CapCut vs Descript for Short-Form Video: Which Editor Fits Your Workflow?',
+        slug: 'capcut-vs-descript-short-form-video',
+        desc: 'Hands-on 3-clip test comparing pause cutting, text-based editing, captions, and 9:16 exports.',
+      },
       {
         title: 'Best Subtitle and Caption Generators for Short Videos',
         slug: 'best-subtitle-caption-generators-short-videos',
