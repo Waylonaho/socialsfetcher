@@ -3,13 +3,28 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Creator Guides & Video Workflows',
-  description: 'In-depth tutorials on video formatting, audio extraction, permission-aware saving, and creator tool stacks.',
+  description: 'In-depth tutorials, interactive calculators, video formatting guides, audio extraction workflows, and creator tool stacks.',
   alternates: {
     canonical: 'https://www.socialsfetcher.com/blog',
   },
 };
 
 const guideCategories = [
+  {
+    category: 'Interactive Creator Utilities & Media Lab',
+    guides: [
+      {
+        title: 'Social Video Bitrate & File-Size Calculator (Plus Storage Estimator)',
+        slug: 'social-video-bitrate-file-size-calculator',
+        desc: 'Interactive calculator to estimate MP4 file size, target Mbps bitrate, and weekly storage needs.',
+      },
+      {
+        title: 'Creator Video File-Name Generator & Client Handoff Checklist',
+        slug: 'creator-video-file-name-generator-handoff-checklist',
+        desc: 'Generate standardized ISO video filenames for raw clips, clean masters, and client deliverables.',
+      },
+    ],
+  },
   {
     category: 'Troubleshooting & Saving Your Own Media',
     guides: [
@@ -171,7 +186,7 @@ const guideCategories = [
       {
         title: 'CapCut vs Descript for Short-Form Video: Which Editor Fits Your Workflow?',
         slug: 'capcut-vs-descript-short-form-video',
-        desc: 'Hands-on 3-clip test comparing pause cutting, text-based editing, captions, and 9:16 exports.',
+        desc: 'Compare pause cutting, text-based editing, captions, and 9:16 exports across both editors.',
       },
       {
         title: 'Best Subtitle and Caption Generators for Short Videos',
@@ -289,7 +304,7 @@ export default function BlogHubPage() {
             Creator Resource Library &amp; Workflows
           </h1>
           <p className="text-slate-400 text-sm sm:text-base max-w-2xl">
-            Practical guides covering vertical video optimization, troubleshooting platform saving bugs, audio extraction, and creator software.
+            Interactive media calculators, vertical video optimization guides, troubleshooting workflows, and creator software reviews.
           </p>
         </div>
 
@@ -315,7 +330,7 @@ export default function BlogHubPage() {
                       </p>
                     </div>
                     <span className="text-xs text-indigo-400 font-semibold mt-3 block">
-                      Read Guide →
+                      Open Resource →
                     </span>
                   </Link>
                 ))}
