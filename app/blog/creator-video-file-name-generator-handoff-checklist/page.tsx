@@ -1,83 +1,34 @@
-import type { Metadata } from 'next';
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Creator Video File-Name Generator & Client Handoff Checklist (2026)',
-  description: 'Free interactive file-name generator for video editors and UGC creators. Generate consistent ISO filenames for raw footage, clean masters, and client deliverables.',
-  alternates: {
-    canonical: 'https://www.socialsfetcher.com/blog/creator-video-file-name-generator-handoff-checklist',
-  },
-};
-
 export default function FileNameGeneratorHandoffPage() {
+  const [dateVal, setDateVal] = useState('2026-10-28');
+  const [projectRaw, setProjectRaw] = useState('brand-hook-test');
+  const [stage, setStage] = useState('MASTER');
+  const [aspect, setAspect] = useState('9x16');
+  const [audio, setAudio] = useState('VO-Only');
+  const [rights, setRights] = useState('OWNED');
+  const [version, setVersion] = useState('v01');
+  const [copied, setCopied] = useState(false);
+
   const OPUSCLIP_LINK = "https://opus.pro/?via=waylon";
   const TOOLSUITE_VIP_LINK = "https://whop.com/toolsuite/buy-vip?a=aptdiocese";
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'SoftwareApplication',
-        name: 'Creator Video File-Name Generator',
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web Browser',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD',
-        },
-        description: 'Generate standardized, chronologically sorted filenames for short-form video masters, client revisions, and multi-platform exports.',
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.socialsfetcher.com' },
-          { '@type': 'ListItem', position: 2, name: 'Blog & Guides', item: 'https://www.socialsfetcher.com/blog' },
-          { '@type': 'ListItem', position: 3, name: 'Video File-Name Generator & Handoff Checklist', item: 'https://www.socialsfetcher.com/blog/creator-video-file-name-generator-handoff-checklist' },
-        ],
-      },
-    ],
+  const cleanSlug = projectRaw.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'video-clip';
+  const generatedFileName = `${dateVal}_${cleanSlug}_${stage}_${aspect}_${audio}_${rights}_${version}.mp4`;
+
+  const handleCopy = () => {
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(generatedFileName);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
   };
-
-  const fnScript = `
-    function updateFileNameGen() {
-      var dateVal = document.getElementById('fn-date')?.value || '2026-10-28';
-      var projectRaw = document.getElementById('fn-project')?.value || 'brand-hook-test';
-      var stage = document.getElementById('fn-stage')?.value || 'MASTER';
-      var aspect = document.getElementById('fn-aspect')?.value || '9x16';
-      var audio = document.getElementById('fn-audio')?.value || 'VO-Only';
-      var rights = document.getElementById('fn-rights')?.value || 'OWNED';
-      var version = document.getElementById('fn-version')?.value || 'v01';
-
-      var cleanSlug = projectRaw.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'video-clip';
-      var fullFileName = dateVal + '_' + cleanSlug + '_' + stage + '_' + aspect + '_' + audio + '_' + rights + '_' + version + '.mp4';
-
-      var outEl = document.getElementById('fn-output');
-      if (outEl) outEl.textContent = fullFileName;
-    }
-    function copyGeneratedFileName() {
-      var outEl = document.getElementById('fn-output');
-      var btnEl = document.getElementById('fn-copy-btn');
-      if (outEl && navigator.clipboard) {
-        navigator.clipboard.writeText(outEl.textContent || '');
-        if (btnEl) {
-          btnEl.textContent = '✓ Copied!';
-          setTimeout(function() { btnEl.textContent = 'Copy Filename'; }, 2000);
-        }
-      }
-    }
-    document.addEventListener('input', function(e) {
-      if (e.target && e.target.id && e.target.id.startsWith('fn-')) {
-        updateFileNameGen();
-      }
-    });
-  `;
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 font-sans">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script dangerouslySetInnerHTML={{ __html: fnScript }} />
-
       <div className="bg-slate-900 border-b border-slate-800 py-1.5 px-4 text-center text-[11px] text-slate-400">
         <span>Disclosure: We may earn a commission if you sign up for partner software links on this page, at no extra cost to you.</span>
       </div>
@@ -121,7 +72,7 @@ export default function FileNameGeneratorHandoffPage() {
           When delivering vertical video packages to a client or managing your own multi-platform catalog across TikTok, Instagram Reels, and YouTube Shorts, ambiguous filenames like <code className="text-slate-200 bg-slate-800 px-1.5 py-0.5 rounded">Edit_Final_v2_NoMusic.mp4</code> cause costly publishing mistakes. Use this generator to build standardized, self-documenting filenames that record the date, aspect ratio, audio state, and usage rights right in the file title.
         </p>
 
-        {/* Interactive File-Name Builder */}
+        {/* Interactive React File-Name Builder */}
         <section className="p-6 sm:p-8 rounded-2xl bg-slate-900 border border-emerald-500/40 mb-10 shadow-2xl">
           <h2 className="text-lg sm:text-xl font-bold text-white mb-4">
             Interactive ISO Video File-Name Builder
@@ -134,7 +85,8 @@ export default function FileNameGeneratorHandoffPage() {
               <input
                 id="fn-date"
                 type="date"
-                defaultValue="2026-10-28"
+                value={dateVal}
+                onChange={(e) => setDateVal(e.target.value)}
                 className="w-full px-4 py-2.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-sm focus:border-emerald-500 focus:outline-none"
               />
             </div>
@@ -146,7 +98,8 @@ export default function FileNameGeneratorHandoffPage() {
               <input
                 id="fn-project"
                 type="text"
-                defaultValue="brand-hook-test"
+                value={projectRaw}
+                onChange={(e) => setProjectRaw(e.target.value)}
                 placeholder="e.g. mic-comparison-hook1"
                 className="w-full px-4 py-2.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-sm focus:border-emerald-500 focus:outline-none"
               />
@@ -158,7 +111,8 @@ export default function FileNameGeneratorHandoffPage() {
               </label>
               <select
                 id="fn-stage"
-                defaultValue="MASTER"
+                value={stage}
+                onChange={(e) => setStage(e.target.value)}
                 className="w-full px-4 py-2.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-sm focus:border-emerald-500 focus:outline-none"
               >
                 <option value="RAW">RAW (Uncut Camera Roll File)</option>
@@ -176,7 +130,8 @@ export default function FileNameGeneratorHandoffPage() {
               </label>
               <select
                 id="fn-aspect"
-                defaultValue="9x16"
+                value={aspect}
+                onChange={(e) => setAspect(e.target.value)}
                 className="w-full px-4 py-2.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-sm focus:border-emerald-500 focus:outline-none"
               >
                 <option value="9x16">9x16 (1080x1920 Vertical)</option>
@@ -192,7 +147,8 @@ export default function FileNameGeneratorHandoffPage() {
               </label>
               <select
                 id="fn-audio"
-                defaultValue="VO-Only"
+                value={audio}
+                onChange={(e) => setAudio(e.target.value)}
                 className="w-full px-4 py-2.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-sm focus:border-emerald-500 focus:outline-none"
               >
                 <option value="VO-Only">VO-Only (Voiceover Only — Add Music In-App)</option>
@@ -209,7 +165,8 @@ export default function FileNameGeneratorHandoffPage() {
                 </label>
                 <select
                   id="fn-rights"
-                  defaultValue="OWNED"
+                  value={rights}
+                  onChange={(e) => setRights(e.target.value)}
                   className="w-full px-3 py-2.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-xs focus:border-emerald-500 focus:outline-none"
                 >
                   <option value="OWNED">OWNED</option>
@@ -223,7 +180,8 @@ export default function FileNameGeneratorHandoffPage() {
                 </label>
                 <select
                   id="fn-version"
-                  defaultValue="v01"
+                  value={version}
+                  onChange={(e) => setVersion(e.target.value)}
                   className="w-full px-3 py-2.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-xs focus:border-emerald-500 focus:outline-none"
                 >
                   <option value="v01">v01</option>
@@ -238,22 +196,18 @@ export default function FileNameGeneratorHandoffPage() {
           <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="overflow-x-auto">
               <span className="text-[10px] text-slate-400 uppercase font-semibold block mb-1">Generated Standardized Filename:</span>
-              <code id="fn-output" className="text-xs sm:text-sm font-mono font-bold text-emerald-400 break-all">
-                2026-10-28_brand-hook-test_MASTER_9x16_VO-Only_OWNED_v01.mp4
+              <code className="text-xs sm:text-sm font-mono font-bold text-emerald-400 break-all">
+                {generatedFileName}
               </code>
             </div>
             <button
-              id="fn-copy-btn"
               type="button"
-              onClick={() => {}}
-              onMouseDown={undefined}
+              onClick={handleCopy}
               className="px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shrink-0 transition"
-              dangerouslySetInnerHTML={{ __html: 'Copy Filename' }}
-            />
+            >
+              {copied ? '✓ Copied!' : 'Copy Filename'}
+            </button>
           </div>
-          <script dangerouslySetInnerHTML={{ __html: `
-            document.getElementById('fn-copy-btn')?.addEventListener('click', copyGeneratedFileName);
-          `}} />
         </section>
 
         <section className="mb-10 space-y-4">
