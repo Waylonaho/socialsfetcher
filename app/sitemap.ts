@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'why-cross-posted-video-looks-blurry-fix', lastModified: '2026-11-05' },
     { slug: 'repurpose-youtube-short-to-reels-and-tiktok', lastModified: '2026-10-07' },
     { slug: 'how-to-save-tiktok-video-before-posting', lastModified: '2026-10-08' },
-    { slug: 'format-vertical-video-tiktok-reels-shorts-no-black-bars', lastModified: '2026-10-08' },
+    { slug: 'format-vertical-video-tiktok-reels-shorts-no-black-bars', lastModified: '2026-11-05' },
     { slug: 'how-to-save-an-x-video-with-permission', lastModified: '2026-10-09' },
     { slug: 'how-to-extract-audio-from-youtube-shorts-safely', lastModified: '2026-10-09' },
     { slug: 'how-to-save-tiktok-draft-to-camera-roll', lastModified: '2026-10-10' },
@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'tiktok-save-button-missing-on-own-video', lastModified: '2026-10-18' },
     { slug: 'how-to-download-audio-from-youtube-shorts-iphone', lastModified: '2026-10-18' },
     { slug: 'capcut-vs-descript-short-form-video', lastModified: '2026-10-26' },
-    { slug: 'how-to-organize-backup-social-videos-creator-vault', lastModified: '2026-10-26' },
+    { slug: 'how-to-organize-backup-social-videos-creator-vault', lastModified: '2026-11-05' },
     { slug: 'social-video-bitrate-file-size-calculator', lastModified: '2026-10-28' },
     { slug: 'creator-video-file-name-generator-handoff-checklist', lastModified: '2026-10-28' },
   ];
@@ -105,6 +105,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
+        {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date('2026-11-05'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
+    },
+
   ];
 
   return [...coreRoutes, ...blogRoutes];
