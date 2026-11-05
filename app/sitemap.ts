@@ -111,6 +111,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.3,
     },
+        {
+      url: `${baseUrl}/tools/studio-gear-configurator`,
+      lastModified: new Date('2026-11-05'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+
 
   ];
 
