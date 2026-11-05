@@ -3,13 +3,14 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'How to Format Vertical Video for TikTok, Reels & Shorts Without Black Bars (2026 Safe Zones)',
-  description: 'Master 9:16 vertical video dimensions (1080x1920), UI safe-zone pixel margins, and test your subtitle lines with our interactive Caption Readability Checker.',
+  description: 'Master 9:16 vertical video dimensions (1080x1920), UI safe-zone pixel margins, vertical phone tripod mounts, and test your subtitles with our interactive Caption Checker.',
   alternates: {
     canonical: 'https://www.socialsfetcher.com/blog/format-vertical-video-tiktok-reels-shorts-no-black-bars',
   },
 };
 
 export default function FormatVerticalVideoSafeZonesPage() {
+  const AMAZON_TAG = "socialsfetcher-20";
   const OPUSCLIP_LINK = "https://opus.pro/?via=waylon";
   const TOOLSUITE_VIP_LINK = "https://whop.com/toolsuite/buy-vip?a=aptdiocese";
 
@@ -20,7 +21,7 @@ export default function FormatVerticalVideoSafeZonesPage() {
         '@type': 'Article',
         headline: 'How to Format Vertical Video for TikTok, Reels & Shorts Without Black Bars (2026 Safe Zones)',
         datePublished: '2026-10-08',
-        dateModified: '2026-10-29',
+        dateModified: '2026-11-05',
         author: {
           '@type': 'Organization',
           name: 'SocialsFetcher Editorial Team',
@@ -30,7 +31,7 @@ export default function FormatVerticalVideoSafeZonesPage() {
           name: 'SocialsFetcher',
           url: 'https://www.socialsfetcher.com',
         },
-        description: 'Complete 9:16 vertical video canvas guide with exact pixel safe zones for TikTok, Instagram Reels, and YouTube Shorts plus an interactive caption layout checker.',
+        description: 'Complete 9:16 vertical video canvas guide with exact pixel safe zones for TikTok, Instagram Reels, and YouTube Shorts, interactive caption layout checker, and vertical filming hardware.',
       },
       {
         '@type': 'BreadcrumbList',
@@ -106,8 +107,9 @@ export default function FormatVerticalVideoSafeZonesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script dangerouslySetInnerHTML={{ __html: captionCheckerScript }} />
 
+      {/* Mandatory FTC & Amazon Associates Disclosure */}
       <div className="bg-slate-900 border-b border-slate-800 py-1.5 px-4 text-center text-[11px] text-slate-400">
-        <span>Disclosure: We may earn a commission if you sign up for partner software links on this page, at no extra cost to you.</span>
+        <span>Disclosure: As an Amazon Associate I earn from qualifying purchases. We may also earn commissions on software partner links on this page.</span>
       </div>
 
       <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
@@ -136,9 +138,9 @@ export default function FormatVerticalVideoSafeZonesPage() {
 
         <div className="flex items-center gap-2 mb-4 text-xs font-semibold">
           <span className="bg-indigo-950 border border-indigo-700/60 text-indigo-400 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-            9:16 Production Standard • Updated Oct 2026
+            9:16 Production Standard • Updated Nov 2026
           </span>
-          <span className="text-slate-500">• Includes Interactive Caption Checker</span>
+          <span className="text-slate-500">• Includes Interactive Caption Checker &amp; Hardware Rigs</span>
         </div>
 
         <h1 className="text-3xl sm:text-5xl font-extrabold mb-4 leading-tight text-white tracking-tight">
@@ -155,7 +157,7 @@ export default function FormatVerticalVideoSafeZonesPage() {
           </p>
         </div>
 
-        {/* Interactive Caption Layout & Readability Checker (#19) */}
+        {/* Interactive Caption Layout & Readability Checker */}
         <section className="p-6 sm:p-8 rounded-2xl bg-slate-900 border border-indigo-500/40 mb-10 shadow-2xl">
           <h2 className="text-lg sm:text-xl font-bold text-white mb-2">
             Interactive Short-Video Caption Readability &amp; Safe-Zone Checker
@@ -175,7 +177,6 @@ export default function FormatVerticalVideoSafeZonesPage() {
                 defaultValue="Stop making this editing mistake on vertical video"
                 className="w-full px-4 py-2.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-sm focus:border-indigo-500 focus:outline-none"
               />
-              <span className="text-[11px] text-slate-500">Aim for 3 to 7 words (under 42 characters) per 2-line caption block.</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -230,12 +231,63 @@ export default function FormatVerticalVideoSafeZonesPage() {
           </div>
         </section>
 
+        {/* Amazon Associates Gear Recommendations */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-slate-900 border border-indigo-500/40 mb-10 shadow-2xl space-y-4">
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-xs font-bold text-indigo-400 bg-indigo-950 border border-indigo-800 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              Vertical Filming Hardware Rigs
+            </span>
+            <span className="text-xs text-slate-400">Amazon Partner Recommendations</span>
+          </div>
+          <h2 className="text-xl font-bold text-white">
+            Recommended Tripods &amp; Mounts for Native 9:16 Filming
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Filming horizontally and cropping later reduces video resolution by up to 60%. Mount your smartphone natively in vertical 9:16 orientation using these tested hardware setups:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
+            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <span className="text-indigo-400 font-bold block mb-1">1. 360-Degree Rotating Phone Tripods</span>
+                <p className="text-slate-400 mb-3">60-inch+ extendable tripod stands with locking ballheads that flip instantly between horizontal and vertical 9:16 modes.</p>
+              </div>
+              <a
+                href={`https://www.amazon.com/s?k=rotating+vertical+phone+tripod+stand&tag=${AMAZON_TAG}`}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="inline-block text-center py-2 px-4 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition"
+              >
+                Check Vertical Tripods on Amazon →
+              </a>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <span className="text-indigo-400 font-bold block mb-1">2. MagSafe &amp; Smartphone Tracking Gimbals</span>
+                <p className="text-slate-400 mb-3">3-axis handheld gimbals with AI face-tracking that keep your head locked inside the 9:16 safe zone while walking.</p>
+              </div>
+              <a
+                href={`https://www.amazon.com/s?k=magsafe+phone+gimbal+stabilizer+tracking&tag=${AMAZON_TAG}`}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="inline-block text-center py-2 px-4 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition"
+              >
+                Check Phone Gimbals on Amazon →
+              </a>
+            </div>
+          </div>
+          <p className="text-[10px] text-slate-500 text-center pt-2">
+            As an Amazon Associate I earn from qualifying purchases.
+          </p>
+        </section>
+
         <section className="mb-10 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-white">
             1. Why Captions Get Hidden Behind Reels, TikTok &amp; Shorts Buttons
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Each vertical platform stacks its interface widgets in slightly different screen regions, and taller phones (like 19.5:9 iPhones) dynamically crop the left and right edges of a 9:16 video to fill the screen:
+            Each vertical platform stacks its interface widgets in slightly different screen regions:
           </p>
           <div className="overflow-x-auto rounded-xl border border-slate-800 my-4">
             <table className="w-full text-xs sm:text-sm text-slate-300">
@@ -251,53 +303,27 @@ export default function FormatVerticalVideoSafeZonesPage() {
                 <tr>
                   <td className="py-3 px-4 font-semibold text-white">TikTok</td>
                   <td className="py-3 px-4">Top 210 px (Following/For You + Search)</td>
-                  <td className="py-3 px-4 text-amber-400">Bottom 350 px (Handle, Caption, Shop tag, Audio)</td>
+                  <td className="py-3 px-4 text-amber-400">Bottom 350 px (Handle, Caption, Audio)</td>
                   <td className="py-3 px-4">Right 140 px (Profile, Like, Comment, Save, Share)</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 font-semibold text-white">Instagram Reels</td>
                   <td className="py-3 px-4">Top 220 px (Reels header &amp; Camera icon)</td>
-                  <td className="py-3 px-4 text-amber-400">Bottom 340 px (Author badge, Caption, Audio pill)</td>
+                  <td className="py-3 px-4 text-amber-400">Bottom 340 px (Author badge, Caption)</td>
                   <td className="py-3 px-4">Right 130 px (Heart, Comment, Paper plane, 3-dots)</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 font-semibold text-white">YouTube Shorts</td>
                   <td className="py-3 px-4">Top 240 px (Search, Subscriptions tab, Menu)</td>
-                  <td className="py-3 px-4 text-amber-400">Bottom 360 px (Channel Subscribe pill, Title, Remix bar)</td>
-                  <td className="py-3 px-4">Right 140 px (Thumbs up/down, Comments, Share, Audio)</td>
+                  <td className="py-3 px-4 text-amber-400">Bottom 360 px (Channel Subscribe pill, Title)</td>
+                  <td className="py-3 px-4">Right 140 px (Thumbs up/down, Comments, Share)</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </section>
 
-        <section className="mb-10 space-y-4">
-          <h2 className="text-xl sm:text-2xl font-bold text-white">
-            2. Reframing 16:9 Horizontal Footage to 9:16 Without Black Bars
-          </h2>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            When converting a horizontal 1920×1080 YouTube video or livestream into a 1080×1920 vertical clip, avoid leaving empty black bars above and below the frame. Use one of these three layouts instead:
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
-              <h3 className="font-bold text-indigo-400 mb-1">Layout A: Full 9:16 Center Crop</h3>
-              <p className="text-slate-300 leading-relaxed">Scale a 1080p clip to ~178% (or ~89% on a 4K source) so it fills the entire 1080×1920 frame. Keyframe X-position to follow the active speaker.</p>
-            </div>
-            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
-              <h3 className="font-bold text-emerald-400 mb-1">Layout B: 50/50 Split Screen</h3>
-              <p className="text-slate-300 leading-relaxed">Best for two-person podcasts or screen tutorials. Place the screen recording in the top 1080×960 half and the speaker facecam in the bottom 1080×960 half.</p>
-            </div>
-            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
-              <h3 className="font-bold text-purple-400 mb-1">Layout C: 4:5 Portrait Pillar</h3>
-              <p className="text-slate-300 leading-relaxed">Crop the video to 4:5 (1080×1350) in the center of a 9:16 canvas over a subtle darkened background, placing your hook title above and captions below.</p>
-            </div>
-          </div>
-          <p className="text-xs text-slate-400 mt-3">
-            Want to make sure your exported file doesn&apos;t get compressed into a blurry mess after reframing? Check your target Mbps in our <Link href="/blog/social-video-bitrate-file-size-calculator" className="text-indigo-400 underline font-semibold">Social Video Bitrate &amp; File-Size Calculator</Link> and review our <Link href="/blog/why-cross-posted-video-looks-blurry-fix" className="text-indigo-400 underline font-semibold">Cross-Post Blur Fix Guide</Link>.
-          </p>
-        </section>
-
-        {/* Disclosed Monetization Block */}
+        {/* Disclosed Software Monetization Block */}
         <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-purple-950 via-slate-900 to-slate-900 border border-purple-500/40 my-8 shadow-xl">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-bold text-purple-400 bg-purple-950 border border-purple-800 px-2.5 py-0.5 rounded-full uppercase">
@@ -333,24 +359,10 @@ export default function FormatVerticalVideoSafeZonesPage() {
             </a>
           </div>
         </div>
-
-        <section className="pt-8 border-t border-slate-800">
-          <h2 className="text-lg font-bold text-white mb-4">Related Video Production &amp; Caption Guides</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-            <Link href="/blog/best-subtitle-caption-generators-short-videos" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition">
-              <h3 className="font-bold text-white mb-1">Best Subtitle &amp; Caption Generators</h3>
-              <p className="text-slate-400">Compare word-by-word kinetic caption tools and accuracy benchmarks.</p>
-            </Link>
-            <Link href="/blog/capcut-vs-descript-short-form-video" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition">
-              <h3 className="font-bold text-white mb-1">CapCut vs Descript Workflow Test</h3>
-              <p className="text-slate-400">Which editor handles 9:16 reframing and filler-word cuts faster?</p>
-            </Link>
-          </div>
-        </section>
       </main>
 
       <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
-        <p>© 2026 SocialsFetcher.com — Free Online Media Utilities &amp; Guides.</p>
+        <p>© 2026 SocialsFetcher.com — As an Amazon Associate I earn from qualifying purchases.</p>
       </footer>
     </div>
   );
