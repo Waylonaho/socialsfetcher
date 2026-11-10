@@ -2,12 +2,17 @@ const { google } = require('googleapis');
 const fs = require('fs');
 const path = require('path');
 
-// Array of URLs you want Google to immediately crawl/index
+// Array of high-priority PLPs & tools for Google indexing
 const urlsToIndex = [
-  'https://www.socialsfetcher.com/why-cross-posted-video-looks-blurry-fix',
-  'https://www.socialsfetcher.com/format-vertical-video-tiktok-reels-shorts-no-black-bars',
-  'https://www.socialsfetcher.com/how-to-fix-tiktok-audio-sync-lag-after-download',
+  'https://www.socialsfetcher.com/tiktok/download/no-watermark',
+  'https://www.socialsfetcher.com/tiktok/download/without-watermark',
+  'https://www.socialsfetcher.com/instagram/reels/downloader',
+  'https://www.socialsfetcher.com/instagram/reels/1080p-hd',
+  'https://www.socialsfetcher.com/youtube/shorts/saver',
+  'https://www.socialsfetcher.com/youtube/shorts/audio-extract',
+  'https://www.socialsfetcher.com/twitter/video/mp4',
   'https://www.socialsfetcher.com/tools/studio-gear-configurator',
+  'https://www.socialsfetcher.com/why-cross-posted-video-looks-blurry-fix',
 ];
 
 async function runIndexing() {
