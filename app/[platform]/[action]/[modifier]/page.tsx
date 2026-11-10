@@ -13,7 +13,17 @@ interface PageProps {
 export async function generateStaticParams() {
   const platforms = ['tiktok', 'instagram', 'youtube', 'twitter'];
   const actions = ['download', 'reels', 'shorts', 'video'];
-  const modifiers = ['no-watermark', 'downloader', 'saver', 'mp4'];
+  const modifiers = [
+    'no-watermark',
+    'downloader',
+    'saver',
+    'mp4',
+    'high-quality',
+    '1080p-hd',
+    'without-watermark',
+    'audio-extract',
+    'mp3'
+  ];
 
   const paths = [];
   for (const platform of platforms) {
@@ -29,11 +39,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { platform, action, modifier } = await params;
   const pName = platform.charAt(0).toUpperCase() + platform.slice(1);
-  const mName = modifier.replace('-', ' ');
+  const mName = modifier.replace(/-/g, ' ');
 
   return {
-    title: `Free ${pName} Video ${action.toUpperCase()} (${mName.toUpperCase()}) — SocialsFetcher`,
-    description: `Download and extract ${pName} clips in high quality. Free online downloader utility for vertical video creators.`,
+    title: `Free ${pName} ${action.toUpperCase()} (${mName.toUpperCase()}) — SocialsFetcher`,
+    description: `Extract, convert, and save public ${pName} ${action} clips in high definition (${mName}). Free online media utility for vertical video editors.`,
     alternates: {
       canonical: `https://www.socialsfetcher.com/${platform}/${action}/${modifier}`,
     },
@@ -43,11 +53,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function DynamicToolPage({ params }: PageProps) {
   const { platform, action, modifier } = await params;
   const pName = platform.charAt(0).toUpperCase() + platform.slice(1);
+  const cleanMod = modifier.replace(/-/g, ' ');
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: `${pName} ${action} ${modifier} Downloader`,
+    name: `${pName} ${action} ${cleanMod} Utility`,
     applicationCategory: 'MultimediaApplication',
     operatingSystem: 'Web Browser',
     offers: {
@@ -76,6 +87,7 @@ export default async function DynamicToolPage({ params }: PageProps) {
           <nav className="flex items-center space-x-6 text-sm text-slate-400 font-medium">
             <Link href="/" className="hover:text-indigo-400 transition">All Tools</Link>
             <Link href="/blog" className="hover:text-indigo-400 transition">Guides</Link>
+            <Link href="/tools/studio-gear-configurator" className="hover:text-indigo-400 transition hidden sm:inline">Gear Picker</Link>
           </nav>
         </div>
       </header>
@@ -84,29 +96,49 @@ export default async function DynamicToolPage({ params }: PageProps) {
         <nav aria-label="Breadcrumb" className="text-xs text-slate-400 mb-6 flex justify-center items-center gap-2">
           <Link href="/" className="hover:text-indigo-400 transition">Home</Link>
           <span>/</span>
-          <span className="capitalize text-slate-200">{platform} {action} {modifier}</span>
+          <span className="capitalize text-slate-200">{platform} {action} {cleanMod}</span>
         </nav>
 
-        <h1 className="text-3xl sm:text-5xl font-extrabold mb-4 leading-tight text-white capitalize">
-          {pName} {action} ({modifier.replace('-', ' ')})
+        <h1 className="text-3xl sm:text-5xl font-extrabold mb-4 leading-tight text-white capitalize tracking-tight">
+          {pName} {action} Extractor <span className="text-indigo-400">({cleanMod})</span>
         </h1>
         <p className="text-slate-400 text-base sm:text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-          Paste any public {pName} video link below to process and extract your media file.
+          Paste any public {pName} video link below to analyze, convert, and extract master-quality media files without watermarks.
         </p>
 
-        {/* Client Component for Interactivity */}
+        {/* Client Interactivity Component */}
         <ToolClient platform={platform} action={action} modifier={modifier} />
 
-        <section className="mt-16 text-left border-t border-slate-800 pt-8 space-y-4">
-          <h2 className="text-lg font-bold text-white">Related Creator Media Tools</h2>
+        {/* Educational Content Section for Googlebot Crawling */}
+        <section className="mt-16 text-left space-y-6 pt-8 border-t border-slate-800">
+          <h2 className="text-xl font-bold text-white">How to Process &amp; Convert {pName} Video Masters</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-300">
+            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
+              <strong className="text-indigo-400 block mb-1">1. Copy Video URL</strong>
+              <p className="text-slate-400">Open {pName}, tap the Share button on your target video, and select &quot;Copy Link&quot;.</p>
+            </div>
+            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
+              <strong className="text-indigo-400 block mb-1">2. Extract Uncompressed Stream</strong>
+              <p className="text-slate-400">Paste the URL above to isolate clean 1080p MP4 containers or 320kbps audio stems.</p>
+            </div>
+            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
+              <strong className="text-indigo-400 block mb-1">3. Repurpose Across Platforms</strong>
+              <p className="text-slate-400">Use our safe-zone and bitrate calculators before cross-posting to prevent compression blur.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Cross-Link SEO Network */}
+        <section className="mt-12 text-left border-t border-slate-800 pt-8 space-y-4">
+          <h2 className="text-lg font-bold text-white">Related Creator Media Utilities &amp; Guides</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
             <Link href="/blog/why-cross-posted-video-looks-blurry-fix" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition">
-              <strong className="text-white block mb-1">Blurry Video Upload Fix</strong>
-              <span className="text-slate-400">Target bitrates and color space fixes for 1080p vertical uploads.</span>
+              <strong className="text-white block mb-1">Why Cross-Posted Video Looks Blurry</strong>
+              <span className="text-slate-400">Fix resolution drop and color-space shifts across Reels and TikTok.</span>
             </Link>
             <Link href="/tools/studio-gear-configurator" className="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition">
-              <strong className="text-white block mb-1">Studio Gear Configurator</strong>
-              <span className="text-slate-400">Build an itemized lighting, audio, and camera rig.</span>
+              <strong className="text-white block mb-1">Interactive Studio Gear Configurator</strong>
+              <span className="text-slate-400">Build an itemized studio lighting, audio, and camera setup.</span>
             </Link>
           </div>
         </section>
