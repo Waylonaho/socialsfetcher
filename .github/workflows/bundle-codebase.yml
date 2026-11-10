@@ -1,0 +1,25 @@
+name: Generate AI Codebase Snapshot
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Pack Repository with Repomix
+        uses: yamadashy/repomix/.github/actions/repomix@main
+        with:
+          output: socialsfetcher-codebase.md
+          style: markdown
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: socialsfetcher-codebase-snapshot
+          path: socialsfetcher-codebase.md
