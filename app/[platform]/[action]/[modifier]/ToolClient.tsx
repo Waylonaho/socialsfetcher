@@ -12,6 +12,7 @@ export default function ToolClient({ platform, action, modifier }: ToolClientPro
   const OPUSCLIP_LINK = "https://opus.pro/?via=waylon";
 
   const [url, setUrl] = useState('');
+  const [downloadUrl, setDownloadUrl] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const formattedPlatform = platform ? platform.charAt(0).toUpperCase() + platform.slice(1) : 'Social';
@@ -21,9 +22,26 @@ export default function ToolClient({ platform, action, modifier }: ToolClientPro
     if (!url.trim()) return;
 
     setStatus('loading');
-    setTimeout(() => {
-      setStatus('success');
-    }, 1000);
+    setDownloadUrl('');
+
+    try {
+      const res = await fetch('/api/fetch-video', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ videoUrl: url }),
+      });
+
+      const data = await res.json();
+
+      if (data.success && data.downloadUrl) {
+        setDownloadUrl(data.downloadUrl);
+        setStatus('success');
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      setStatus('error');
+    }
   };
 
   return (
@@ -34,7 +52,7 @@ export default function ToolClient({ platform, action, modifier }: ToolClientPro
             type="url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder={`Paste ${formattedPlatform} link here...`}
+            placeholder={`Paste ${formattedPlatform} video link here...`}
             required
             className="flex-grow px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 text-sm"
           />
@@ -43,29 +61,32 @@ export default function ToolClient({ platform, action, modifier }: ToolClientPro
             disabled={status === 'loading'}
             className="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-bold text-white text-sm transition shadow-lg disabled:opacity-50 shrink-0"
           >
-            {status === 'loading' ? 'Analyzing...' : 'Fetch Media'}
+            {status === 'loading' ? 'Extracting...' : 'Fetch Media'}
           </button>
         </div>
       </form>
 
-      {/* Dual-Funnel Interstitial Box */}
-      {status === 'success' && (
+      {/* REAL DOWNLOAD + MONETIZATION BRIDGE */}
+      {status === 'success' && downloadUrl && (
         <div className="p-5 rounded-2xl bg-slate-900 border border-emerald-500/40 text-left space-y-4 animate-fade-in">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <span className="text-xs font-bold text-emerald-400 flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              {formattedPlatform} Media Stream Extracted
+              {formattedPlatform} Stream Extracted
             </span>
-            <span className="text-[11px] text-slate-500">1080p MP4 Ready</span>
+            <span className="text-[11px] text-slate-500">1080p MP4 Format</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <button
-              onClick={() => alert("Downloading clean video stream...")}
-              className="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition border border-slate-700 text-center"
+            <a
+              href={downloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition text-center shadow-md flex items-center justify-center gap-1"
             >
-              ⬇️ Download Clean MP4
-            </button>
+              ⬇️ Download Real MP4 File
+            </a>
 
             <a
               href={OPUSCLIP_LINK}
@@ -76,10 +97,28 @@ export default function ToolClient({ platform, action, modifier }: ToolClientPro
               ✨ Auto-Crop &amp; Caption in OpusClip →
             </a>
           </div>
+        </div>
+      )}
 
-          <p className="text-[10px] text-slate-500 text-center pt-1">
-            Sponsored Partner Disclosure: We earn a commission if you sign up for partner software links.
+      {/* FALLBACK STATE */}
+      {status === 'error' && (
+        <div className="p-5 rounded-2xl bg-slate-900 border border-amber-500/40 text-left space-y-3 animate-fade-in">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-bold text-amber-400 bg-amber-950 border border-amber-800 px-2.5 py-0.5 rounded uppercase">
+              Restricted Media Notice
+            </span>
+          </div>
+          <p className="text-xs text-slate-300 leading-relaxed">
+            Direct server extraction was restricted for this specific link. You can still clip, edit, and reframe this video using our partner AI tool:
           </p>
+          <a
+            href={OPUSCLIP_LINK}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="block text-center py-3 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition shadow-md"
+          >
+            Process Clip in OpusClip Free →
+          </a>
         </div>
       )}
     </div>
