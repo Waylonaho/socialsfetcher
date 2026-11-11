@@ -8,6 +8,7 @@ const urlList = [
   `https://${HOST}/`,
   `https://${HOST}/tools/safe-zone-canvas`,
   `https://${HOST}/tools/studio-gear-configurator`,
+  'https://${HOST}/tools/bitrate-calculator',
   `https://${HOST}/tiktok/download/no-watermark`,
   `https://${HOST}/instagram/reels/downloader`,
   `https://${HOST}/youtube/shorts/saver`,
