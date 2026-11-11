@@ -4,7 +4,6 @@ const HOST = 'www.socialsfetcher.com';
 const API_KEY = '3a9c7e8f1b2d4e5f6a7b8c9d0e1f2a3b';
 const KEY_LOCATION = `https://${HOST}/3a9c7e8f1b2d4e5f6a7b8c9d0e1f2a3b.txt`;
 
-// List of high-priority URLs to ping across IndexNow engines
 const urlList = [
   `https://${HOST}/`,
   `https://${HOST}/tools/safe-zone-canvas`,
@@ -31,25 +30,34 @@ const options = {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
-    'Content-Length': Buffer.byteLength(payload)
+    'Content-Length': Buffer.byteLength(payload),
+    'User-Agent': 'SocialsFetcher-IndexNow/1.0'
   }
 };
 
 console.log(`Submitting ${urlList.length} URLs to IndexNow (Bing/Yandex/Seznam)...`);
 
+let isSuccess = false;
+
 const req = https.request(options, (res) => {
   console.log(`IndexNow Response Status: ${res.statusCode}`);
-  
+
   if (res.statusCode === 200 || res.statusCode === 202) {
     console.log('✅ IndexNow submission successful!');
+    isSuccess = true;
   } else {
-    console.log(`⚠️ IndexNow submission warning. Status Code: ${res.statusCode}`);
+    console.log(`⚠️ IndexNow response code: ${res.statusCode}`);
   }
 });
 
 req.on('error', (e) => {
-  console.error(`❌ IndexNow submission error: ${e.message}`);
-  process.exit(1);
+  // If the server accepted the payload (202), ignore post-response socket resets
+  if (isSuccess && (e.code === 'ECONNRESET' || e.message.includes('ECONNRESET'))) {
+    console.log('ℹ️ Connection closed by remote server after successful status.');
+  } else {
+    console.error(`❌ IndexNow submission error: ${e.message}`);
+    process.exit(1);
+  }
 });
 
 req.write(payload);
