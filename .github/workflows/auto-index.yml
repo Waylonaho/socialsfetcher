@@ -1,4 +1,4 @@
-name: Auto-Request Google Indexing
+name: Auto-Request Google & IndexNow Indexing
 
 on:
   push:
@@ -17,12 +17,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Install Google APIs
+        run: npm install googleapis
 
       - name: Run Google Indexing Script
         env:
           GCP_INDEXING_KEY: ${{ secrets.GCP_INDEXING_KEY }}
         run: node scripts/index-urls.js
+
+      - name: Run IndexNow Script (Bing & Multi-Engine)
+        run: node scripts/indexnow.js
