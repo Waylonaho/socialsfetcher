@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/youtube/shorts/saver',
     '/twitter/video/mp4',
     '/tools/studio-gear-configurator',
+    '/tools/safe-zone-canvas',
   ];
 
   const blogSlugs = [
