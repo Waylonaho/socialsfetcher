@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/twitter/video/mp4',
     '/tools/studio-gear-configurator',
     '/tools/safe-zone-canvas',
+    '/tools/bitrate-calculator',
   ];
 
   const blogSlugs = [
