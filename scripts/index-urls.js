@@ -14,6 +14,8 @@ const urlsToIndex = [
   'https://www.socialsfetcher.com/tools/studio-gear-configurator',
   'https://www.socialsfetcher.com/tools/safe-zone-canvas',
   'https://www.socialsfetcher.com/tools/bitrate-calculator',
+  'https://www.socialsfetcher.com/tools/creator-teleprompter',
+  'https://www.socialsfetcher.com/tools/hook-scorer',
   'https://www.socialsfetcher.com/why-cross-posted-video-looks-blurry-fix',
 ];
 
