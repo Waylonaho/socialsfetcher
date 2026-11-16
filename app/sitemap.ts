@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/studio-gear-configurator',
     '/tools/safe-zone-canvas',
     '/tools/bitrate-calculator',
+    '/tools/creator-teleprompter'
+    '/tools/hook-scorer'
   ];
 
   const blogSlugs = [
