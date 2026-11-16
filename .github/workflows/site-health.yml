@@ -1,0 +1,25 @@
+name: Weekly Affiliate Audit & Daily API Health Check
+
+on:
+  schedule:
+    # Runs every day at 12:00 PM UTC
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  health-and-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Audit Affiliate Links
+        run: node scripts/audit-links.js
+
+      - name: Verify Live Video Extraction API
+        run: node scripts/check-api.js
