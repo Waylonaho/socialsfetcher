@@ -2,24 +2,35 @@ import { MetadataRoute } from 'next';
 import fs from 'fs';
 import path from 'path';
 
-function getDirectories(srcPath: string): string[] {
+function getValidSlugsWithDates(srcPath: string): { slug: string; lastModified: Date }[] {
   if (!fs.existsSync(srcPath)) return [];
+
   return fs
     .readdirSync(srcPath, { withFileTypes: true })
     .filter((dirent) => dirent.isDirectory())
-    .map((dirent) => dirent.name);
+    .map((dirent) => {
+      const pageFile = path.join(srcPath, dirent.name, 'page.tsx');
+      if (!fs.existsSync(pageFile)) return null;
+      const stats = fs.statSync(pageFile);
+      return {
+        slug: dirent.name,
+        lastModified: stats.mtime,
+      };
+    })
+    .filter((item): item is { slug: string; lastModified: Date } => item !== null);
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.socialsfetcher.com';
-  const lastModified = new Date();
+  const defaultDate = new Date('2026-11-15');
   const entries: MetadataRoute.Sitemap = [];
   const seen = new Set<string>();
 
   const addEntry = (
     routePath: string,
     priority: number,
-    changeFrequency: 'daily' | 'weekly' | 'monthly'
+    changeFrequency: 'daily' | 'weekly' | 'monthly',
+    lastModified: Date = defaultDate
   ) => {
     const fullUrl = `${baseUrl}${routePath}`;
     if (!seen.has(fullUrl)) {
@@ -39,18 +50,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/youtube/shorts/saver',
     '/twitter/video/mp4',
   ];
-  staticRoutes.forEach((route) => addEntry(route, route === '' ? 1.0 : 0.9, 'daily'));
+  staticRoutes.forEach((route) =>
+    addEntry(route, route === '' ? 1.0 : 0.9, 'daily', new Date())
+  );
 
   // 2. Auto-discover all Tool folders inside app/tools/*
   const toolsDir = path.join(process.cwd(), 'app', 'tools');
-  getDirectories(toolsDir).forEach((slug) => {
-    addEntry(`/tools/${slug}`, 0.9, 'weekly');
+  getValidSlugsWithDates(toolsDir).forEach(({ slug, lastModified }) => {
+    addEntry(`/tools/${slug}`, 0.9, 'weekly', lastModified);
   });
 
   // 3. Auto-discover all Blog folders inside app/blog/*
   const blogDir = path.join(process.cwd(), 'app', 'blog');
-  getDirectories(blogDir).forEach((slug) => {
-    addEntry(`/blog/${slug}`, 0.8, 'weekly');
+  getValidSlugsWithDates(blogDir).forEach(({ slug, lastModified }) => {
+    addEntry(`/blog/${slug}`, 0.8, 'weekly', lastModified);
   });
 
   return entries;
