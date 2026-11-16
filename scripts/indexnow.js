@@ -1,24 +1,11 @@
 const https = require('https');
+const { getUrlsToIndex } = require('./discover-urls');
 
 const HOST = 'www.socialsfetcher.com';
 const API_KEY = '3a9c7e8f1b2d4e5f6a7b8c9d0e1f2a3b';
 const KEY_LOCATION = `https://${HOST}/${API_KEY}.txt`;
 
-// Clean array of exact URLs to submit
-const urlList = [
-  `https://${HOST}`,
-  `https://${HOST}/tools/creator-teleprompter`,
-  `https://${HOST}/tools/hook-scorer`,
-  `https://${HOST}/tools/safe-zone-canvas`,
-  `https://${HOST}/tools/studio-gear-configurator`,
-  `https://${HOST}/tools/bitrate-calculator`,
-  `https://${HOST}/tiktok/download/no-watermark`,
-  `https://${HOST}/instagram/reels/downloader`,
-  `https://${HOST}/youtube/shorts/saver`,
-  `https://${HOST}/twitter/video/mp4`,
-  `https://${HOST}/blog/why-cross-posted-video-looks-blurry-fix`,
-  `https://${HOST}/privacy`
-];
+const urlList = getUrlsToIndex();
 
 const payload = JSON.stringify({
   host: HOST,
@@ -38,24 +25,18 @@ const options = {
   }
 };
 
-console.log(`Submitting ${urlList.length} URLs to IndexNow (Bing/Multi-Engine)...`);
+console.log(`Submitting ${urlList.length} auto-discovered URLs to IndexNow...`);
 
 const req = https.request(options, (res) => {
   let responseBody = '';
-
-  res.on('data', (chunk) => {
-    responseBody += chunk;
-  });
-
+  res.on('data', (chunk) => { responseBody += chunk; });
   res.on('end', () => {
     console.log(`IndexNow Response Status: ${res.statusCode}`);
     if (res.statusCode === 200 || res.statusCode === 202) {
       console.log('✅ IndexNow submission successful!');
     } else {
       console.error(`⚠️ IndexNow returned code ${res.statusCode}. Details: ${responseBody}`);
-      if (res.statusCode >= 400) {
-        process.exit(1);
-      }
+      if (res.statusCode >= 400) process.exit(1);
     }
   });
 });
