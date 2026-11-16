@@ -3,6 +3,9 @@ name: Auto-Request Google & IndexNow Indexing
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'app/blog/**/page.tsx'
+      - 'app/tools/**/page.tsx'
   workflow_dispatch:
 
 jobs:
