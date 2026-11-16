@@ -24,15 +24,24 @@ async function runIndexing() {
     const indexing = google.indexing({ version: 'v3', auth: jwtClient });
 
     for (const url of urlsToIndex) {
-      console.log(`Requesting Google indexing for: ${url}`);
-      const res = await indexing.urlNotifications.publish({
-        requestBody: { url, type: 'URL_UPDATED' },
-      });
-      console.log(`Success [${res.status}]: ${url}`);
+      try {
+        console.log(`Requesting Google indexing for: ${url}`);
+        const res = await indexing.urlNotifications.publish({
+          requestBody: { url, type: 'URL_UPDATED' },
+        });
+        console.log(`✅ Success [${res.status}]: ${url}`);
+      } catch (err) {
+        const status = err?.code || err?.response?.status;
+        if (status === 429) {
+          console.warn('⚠️ Google Indexing API daily quota (200/day) reached. Resets at midnight Pacific Time. Skipping remaining Google calls.');
+          break; // Stop hitting Google for today without crashing the workflow
+        }
+        console.warn(`⚠️ Skipped ${url}: ${err.message}`);
+      }
     }
   } catch (error) {
-    console.error('Indexing failed:', error.message);
-    process.exit(1);
+    console.error('⚠️ Google Indexing setup warning:', error.message);
+    // Do not exit(1) so IndexNow still runs cleanly
   }
 }
 
