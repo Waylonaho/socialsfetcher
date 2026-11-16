@@ -7,6 +7,8 @@ const KEY_LOCATION = `https://${HOST}/${API_KEY}.txt`;
 // Clean array of exact URLs to submit
 const urlList = [
   `https://${HOST}`,
+  `https://${HOST}/tools/creator-teleprompter`,
+  `https://${HOST}/tools/hook-scorer`,
   `https://${HOST}/tools/safe-zone-canvas`,
   `https://${HOST}/tools/studio-gear-configurator`,
   `https://${HOST}/tools/bitrate-calculator`,
@@ -51,7 +53,6 @@ const req = https.request(options, (res) => {
       console.log('✅ IndexNow submission successful!');
     } else {
       console.error(`⚠️ IndexNow returned code ${res.statusCode}. Details: ${responseBody}`);
-      // Only fail process on client error (4xx) or server error (5xx)
       if (res.statusCode >= 400) {
         process.exit(1);
       }
