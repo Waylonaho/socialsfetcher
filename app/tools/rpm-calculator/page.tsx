@@ -22,6 +22,7 @@ const NICHE_MULTIPLIER: Record<NicheKey, { label: string; mult: number }> = {
 };
 
 export default function RpmCalculatorPage() {
+  const AMAZON_TAG = "socialsfetcher-20";
   const OPUSCLIP_LINK = "https://opus.pro/?via=waylon";
   const EPIDEMIC_LINK = "https://share.epidemicsound.com/mvog5c";
   const TOOLSUITE_LINK = "https://whop.com/toolsuite/buy-vip?a=aptdiocese";
@@ -29,7 +30,7 @@ export default function RpmCalculatorPage() {
   const [platform, setPlatform] = useState<PlatformKey>('tiktok_rewards');
   const [niche, setNiche] = useState<NicheKey>('education_how_to');
   const [monthlyViews, setMonthlyViews] = useState<number>(500000);
-  const [qualifiedRate, setQualifiedRate] = useState<number>(65); // % of views that qualify (5s+ watch time)
+  const [qualifiedRate, setQualifiedRate] = useState<number>(65);
   const [incomeGoal, setIncomeGoal] = useState<number>(3000);
 
   const effectiveRpm = Number(
@@ -40,7 +41,6 @@ export default function RpmCalculatorPage() {
   const estimatedMonthlyEarnings = ((qualifiedViews / 1000) * effectiveRpm).toFixed(2);
   const estimatedYearlyEarnings = Math.round(Number(estimatedMonthlyEarnings) * 12);
 
-  // Reverse Goal Calculation: How many total views needed to hit monthly incomeGoal
   const requiredQualifiedViews = (incomeGoal / effectiveRpm) * 1000;
   const requiredTotalViews = Math.round(requiredQualifiedViews / (qualifiedRate / 100));
 
@@ -77,7 +77,6 @@ export default function RpmCalculatorPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
           {/* Inputs (7 Columns) */}
           <div className="lg:col-span-7 bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-xl space-y-6">
-            {/* Platform Selector */}
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">
                 1. Select Monetization Program
@@ -119,7 +118,6 @@ export default function RpmCalculatorPage() {
               </div>
             </div>
 
-            {/* Niche Selector */}
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
                 2. Content Niche (Impacts Advertiser CPM)
@@ -137,7 +135,6 @@ export default function RpmCalculatorPage() {
               </select>
             </div>
 
-            {/* Monthly Views Slider */}
             <div>
               <div className="flex justify-between items-center mb-2">
                 <label className="text-xs font-bold uppercase tracking-wider text-slate-300">
@@ -164,7 +161,6 @@ export default function RpmCalculatorPage() {
               </div>
             </div>
 
-            {/* Qualified View Percentage */}
             <div>
               <div className="flex justify-between items-center mb-2">
                 <label className="text-xs font-bold uppercase tracking-wider text-slate-300">
@@ -185,7 +181,6 @@ export default function RpmCalculatorPage() {
               />
             </div>
 
-            {/* Reverse Income Goal Input */}
             <div className="pt-2 border-t border-slate-800">
               <div className="flex justify-between items-center mb-2">
                 <label className="text-xs font-bold uppercase tracking-wider text-slate-300">
@@ -230,7 +225,6 @@ export default function RpmCalculatorPage() {
               </p>
             </div>
 
-            {/* Monetization Stack Bridges */}
             <div className="space-y-3 pt-1">
               <div className="p-4 rounded-xl bg-purple-950/40 border border-purple-500/40 space-y-2">
                 <span className="text-[10px] font-bold text-purple-400 uppercase tracking-wider block">
@@ -269,7 +263,58 @@ export default function RpmCalculatorPage() {
           </div>
         </div>
 
-        {/* SEO FAQ & Benchmark Table for Google Rich Snippets */}
+        {/* Amazon Associates 60s Retention Gear Section */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-slate-900 border border-indigo-500/40 mb-12 shadow-xl space-y-4">
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] font-bold text-indigo-400 bg-indigo-950 border border-indigo-800 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              60+ Second Retention Hardware
+            </span>
+            <span className="text-xs text-slate-400">Amazon Creator Picks</span>
+          </div>
+          <h2 className="text-xl font-bold text-white">
+            Boost Your Qualified View Rate with Studio Audio &amp; Lighting
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            TikTok Creator Rewards only pays on <strong>qualified views (5+ seconds watched on 60s+ videos)</strong>. Crisp vocal audio and clean key lighting are the fastest upgrades to stop early scroll-offs:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
+            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <span className="text-indigo-400 font-bold block mb-1">1. Wireless Clip-On Lavalier Mics (USB-C / Lightning)</span>
+                <p className="text-slate-400 mb-3">Eliminate room echo and background noise so talking-head hooks hold attention past the 5-second mark.</p>
+              </div>
+              <a
+                href={`https://www.amazon.com/s?k=wireless+lavalier+microphone+for+iphone+usb+c&tag=${AMAZON_TAG}`}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="block text-center py-2.5 px-4 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition"
+              >
+                Check Wireless Mics on Amazon →
+              </a>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <span className="text-indigo-400 font-bold block mb-1">2. Bi-Color LED Key Light &amp; Desk Stand Kits</span>
+                <p className="text-slate-400 mb-3">Batch-film a week of high-RPM 60-second videos in one sitting with consistent studio lighting.</p>
+              </div>
+              <a
+                href={`https://www.amazon.com/s?k=bi+color+led+video+light+desk+mount+kit&tag=${AMAZON_TAG}`}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="block text-center py-2.5 px-4 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition"
+              >
+                Check Studio Lights on Amazon →
+              </a>
+            </div>
+          </div>
+          <p className="text-[10px] text-slate-500 text-center pt-1">
+            As an Amazon Associate I earn from qualifying purchases.
+          </p>
+        </section>
+
+        {/* SEO FAQ & Benchmark Table */}
         <section className="space-y-6 mb-10">
           <h2 className="text-2xl font-bold text-white">
             2026 Short-Form Video RPM Benchmarks by Platform
