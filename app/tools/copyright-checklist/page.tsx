@@ -10,6 +10,7 @@ type VisualSource = 'original_camera' | 'reposted_clip' | 'transformative_commen
 type AccountType = 'personal_organic' | 'monetized_creator' | 'brand_sponsored';
 
 export default function CopyrightChecklistPage() {
+  const AMAZON_TAG = "socialsfetcher-20";
   const EPIDEMIC_LINK = "https://share.epidemicsound.com/mvog5c";
   const OPUSCLIP_LINK = "https://opus.pro/?via=waylon";
 
@@ -19,10 +20,9 @@ export default function CopyrightChecklistPage() {
   const [crossPosting, setCrossPosting] = useState<boolean>(true);
 
   const evaluateRisk = () => {
-    let riskScore = 0; // 0 = Safe, 100 = High Strike/Mute Risk
+    let riskScore = 0;
     const flags: { level: 'high' | 'warn' | 'safe'; title: string; detail: string }[] = [];
 
-    // 1. Audio Licensing Evaluation
     if (audioSource === 'commercial_song') {
       riskScore += 55;
       flags.push({
@@ -68,7 +68,6 @@ export default function CopyrightChecklistPage() {
       });
     }
 
-    // 2. Visual / Footage Originality Evaluation
     if (visualSource === 'reposted_clip') {
       riskScore += 45;
       flags.push({
@@ -131,7 +130,6 @@ export default function CopyrightChecklistPage() {
 
         {/* Interactive Audit Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-10">
-          {/* Configuration Controls (7 Columns) */}
           <div className="lg:col-span-7 bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-xl space-y-6">
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
@@ -192,7 +190,6 @@ export default function CopyrightChecklistPage() {
             </label>
           </div>
 
-          {/* Live Diagnostic Report (5 Columns) */}
           <div className="lg:col-span-5 bg-slate-900 p-6 rounded-2xl border border-indigo-500/40 shadow-xl space-y-5">
             <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-center">
               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
@@ -235,7 +232,6 @@ export default function CopyrightChecklistPage() {
               ))}
             </div>
 
-            {/* Epidemic Sound Direct License Fix */}
             <div className="p-4 rounded-xl bg-indigo-950/50 border border-indigo-500/40 space-y-2">
               <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block">
                 100% Copyright-Safe Audio Solution
@@ -279,6 +275,57 @@ export default function CopyrightChecklistPage() {
           >
             Repurpose Safely in OpusClip →
           </a>
+        </section>
+
+        {/* Amazon Associates Original Voiceover & Audio Hardware */}
+        <section className="p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 mb-8 shadow-xl space-y-4">
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] font-bold text-amber-400 bg-amber-950 border border-amber-800 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              100% Original Audio Gear
+            </span>
+            <span className="text-xs text-slate-400">Amazon Studio Gear</span>
+          </div>
+          <h2 className="text-xl font-bold text-white">
+            Record Transformative Voiceovers That Pass Originality Checks
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Adding your own studio-quality voiceover commentary is the single most reliable way to transform reaction or news clips into original, monetizable content:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
+            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <span className="text-indigo-400 font-bold block mb-1">1. USB Podcast &amp; Voiceover Microphone Bundles</span>
+                <p className="text-slate-400 mb-3">Plug-and-play cardioid mics with boom arms for broadcast-grade commentary tracks without background hiss.</p>
+              </div>
+              <a
+                href={`https://www.amazon.com/s?k=usb+podcast+microphone+boom+arm+kit&tag=${AMAZON_TAG}`}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="block text-center py-2.5 px-4 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition"
+              >
+                Check Voiceover Mics on Amazon →
+              </a>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <span className="text-indigo-400 font-bold block mb-1">2. Closed-Back Studio Monitoring Headphones</span>
+                <p className="text-slate-400 mb-3">Verify voice-to-music balance and catch background audio bleed before publishing to Shorts or Reels.</p>
+              </div>
+              <a
+                href={`https://www.amazon.com/s?k=closed+back+studio+monitoring+headphones&tag=${AMAZON_TAG}`}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="block text-center py-2.5 px-4 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition"
+              >
+                Check Studio Headphones on Amazon →
+              </a>
+            </div>
+          </div>
+          <p className="text-[10px] text-slate-500 text-center pt-1">
+            As an Amazon Associate I earn from qualifying purchases.
+          </p>
         </section>
 
         <WorkflowBar />
