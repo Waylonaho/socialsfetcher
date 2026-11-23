@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 const QUICK_ITEMS = [
   { title: 'Video Downloader (No Watermark)', href: '/', tag: 'Tool' },
+  { title: '2026 Video Specs & Safe-Zone Cheat Sheet', href: '/specs', tag: 'Reference' },
   { title: '2026 Short-Form RPM & Payout Calculator', href: '/tools/rpm-calculator', tag: 'Tool' },
   { title: 'Copyright & Demonetization Risk Checker', href: '/tools/copyright-checklist', tag: 'Tool' },
   { title: 'Creator Teleprompter & Script Timer', href: '/tools/creator-teleprompter', tag: 'Tool' },
@@ -19,6 +20,7 @@ const QUICK_ITEMS = [
   { title: 'Why Cross-Posted Video Looks Blurry (Fix)', href: '/blog/why-cross-posted-video-looks-blurry-fix', tag: 'Guide' },
   { title: 'Format Vertical Video Without Black Bars', href: '/blog/format-vertical-video-tiktok-reels-shorts-no-black-bars', tag: 'Guide' },
   { title: 'Get Paid Clipping Videos on Whop', href: '/blog/get-paid-clipping-videos-on-whop', tag: 'Guide' },
+  { title: 'About SocialsFetcher & Testing Methodology', href: '/about', tag: 'Info' },
 ];
 
 export default function SiteHeader() {
@@ -49,7 +51,7 @@ export default function SiteHeader() {
               setQuery(e.target.value);
               setOpen(true);
             }}
-            placeholder="Search tools & guides..."
+            placeholder="Search tools, specs & guides..."
             className="w-full px-3.5 py-1.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
           />
 
@@ -78,6 +80,7 @@ export default function SiteHeader() {
         </div>
 
         <nav className="hidden lg:flex items-center space-x-4 text-xs font-medium text-slate-400 shrink-0">
+          <Link href="/specs" className="hover:text-indigo-400 transition">2026 Specs</Link>
           <Link href="/tools/rpm-calculator" className="hover:text-indigo-400 transition">RPM Calc</Link>
           <Link href="/tools/copyright-checklist" className="hover:text-indigo-400 transition">Copyright</Link>
           <Link href="/tools/creator-teleprompter" className="hover:text-indigo-400 transition">Teleprompter</Link>
