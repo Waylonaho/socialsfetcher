@@ -4,8 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 const QUICK_ITEMS = [
-  { title: 'Copyright & Demonetization Risk Checker', href: '/tools/copyright-checklist', tag: 'Tool' },
   { title: 'Video Downloader (No Watermark)', href: '/', tag: 'Tool' },
+  { title: '2026 Short-Form RPM & Payout Calculator', href: '/tools/rpm-calculator', tag: 'Tool' },
+  { title: 'Copyright & Demonetization Risk Checker', href: '/tools/copyright-checklist', tag: 'Tool' },
   { title: 'Creator Teleprompter & Script Timer', href: '/tools/creator-teleprompter', tag: 'Tool' },
   { title: 'Viral Video Hook Scorer', href: '/tools/hook-scorer', tag: 'Tool' },
   { title: '9:16 Visual Safe-Zone Overlay Canvas', href: '/tools/safe-zone-canvas', tag: 'Tool' },
@@ -17,9 +18,7 @@ const QUICK_ITEMS = [
   { title: 'X / Twitter MP4 Downloader', href: '/twitter/video/mp4', tag: 'Extractor' },
   { title: 'Why Cross-Posted Video Looks Blurry (Fix)', href: '/blog/why-cross-posted-video-looks-blurry-fix', tag: 'Guide' },
   { title: 'Format Vertical Video Without Black Bars', href: '/blog/format-vertical-video-tiktok-reels-shorts-no-black-bars', tag: 'Guide' },
-  { title: '50 Viral Hook Ideas Swipe File', href: '/blog/50-viral-hook-ideas-swipe-file', tag: 'Guide' },
   { title: 'Get Paid Clipping Videos on Whop', href: '/blog/get-paid-clipping-videos-on-whop', tag: 'Guide' },
-  { title: 'Faceless Channel Tools Stack on a Budget', href: '/blog/faceless-channel-tools-stack-budget', tag: 'Guide' },
 ];
 
 export default function SiteHeader() {
@@ -78,11 +77,11 @@ export default function SiteHeader() {
           )}
         </div>
 
-        <nav className="hidden md:flex items-center space-x-5 text-xs font-medium text-slate-400 shrink-0">
+        <nav className="hidden lg:flex items-center space-x-4 text-xs font-medium text-slate-400 shrink-0">
+          <Link href="/tools/rpm-calculator" className="hover:text-indigo-400 transition">RPM Calc</Link>
+          <Link href="/tools/copyright-checklist" className="hover:text-indigo-400 transition">Copyright</Link>
           <Link href="/tools/creator-teleprompter" className="hover:text-indigo-400 transition">Teleprompter</Link>
-          <Link href="/tools/hook-scorer" className="hover:text-indigo-400 transition">Hook Scorer</Link>
           <Link href="/tools/safe-zone-canvas" className="hover:text-indigo-400 transition">Safe-Zone</Link>
-          <Link href="/tools/bitrate-calculator" className="hover:text-indigo-400 transition">Bitrate</Link>
           <Link href="/blog" className="hover:text-indigo-400 transition">Guides</Link>
         </nav>
       </div>
