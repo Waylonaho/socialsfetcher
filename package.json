@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/cleanup-footers.js && node scripts/refresh-dates.js && node scripts/generate-related-map.js",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "audit:links": "node scripts/audit-links.js && node scripts/audit-internal-links.js"
   },
   "dependencies": {
     "googleapis": "^144.0.0",
