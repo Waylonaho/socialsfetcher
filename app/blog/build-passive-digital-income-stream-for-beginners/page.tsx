@@ -134,9 +134,6 @@ export default function DigitalIncomeArticlePage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
-        © 2026 SocialsFetcher.com — Free Media Utilities & Digital Income Guides.
-      </footer>
     </div>
   );
 }

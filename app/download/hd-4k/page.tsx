@@ -209,10 +209,6 @@ export default function HD4KDownloaderPage() {
           </div>
         </section>
       </main>
-
-      <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
-        <p>© 2026 SocialsFetcher.com — Free Online Media Utility. Please only download content you own or have permission to use.</p>
-      </footer>
     </div>
   );
 }

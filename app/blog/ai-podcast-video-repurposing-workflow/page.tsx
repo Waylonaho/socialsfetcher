@@ -670,22 +670,6 @@ export default function AIPodcastVideoRepurposingWorkflowPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950 py-12">
-        <div className="max-w-6xl mx-auto px-6 text-center text-xs text-slate-400 space-y-4">
-          <div className="flex justify-center items-center gap-6">
-            <a href="/" className="hover:text-slate-300 transition">Home</a>
-            <a href="/tiktok/download/no-watermark" className="hover:text-slate-300 transition">TikTok Downloader</a>
-            <a href="/instagram/reels/downloader" className="hover:text-slate-300 transition">Instagram Saver</a>
-            <a href="/youtube/shorts/saver" className="hover:text-slate-300 transition">Shorts Saver</a>
-          </div>
-          <p>
-            &copy; {new Date().getFullYear()} SocialsFetcher.com. All rights reserved. Empowering creator workflows and automated social media growth.
-          </p>
-          <p className="text-[11px] text-slate-400 max-w-xl mx-auto">
-            Disclosure: SocialsFetcher provides unbiased creator tutorials. Some outbound links on this page are affiliate referral links that may earn us a small commission at zero additional cost to you.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -114,10 +114,6 @@ export default function ExtractInstagramReelsAudioPage() {
 
         <WorkflowBar />
       </main>
-
-      <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
-        <p>© 2026 SocialsFetcher.com — As an Amazon Associate I earn from qualifying purchases.</p>
-      </footer>
     </div>
   );
 }

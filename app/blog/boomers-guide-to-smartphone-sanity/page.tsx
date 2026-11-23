@@ -166,9 +166,6 @@ export default function BoomerSmartphoneGuidePage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800 py-8 text-center text-sm text-slate-400 bg-slate-950">
-        © 2026 SocialsFetcher.com — Easy Technology Guides & Free Online Resources.
-      </footer>
     </div>
   );
 }

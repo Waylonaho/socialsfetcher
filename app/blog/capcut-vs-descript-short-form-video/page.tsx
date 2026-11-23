@@ -279,10 +279,6 @@ export default function CapCutVsDescriptPage() {
           </div>
         </section>
       </main>
-
-      <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
-        <p>© 2026 SocialsFetcher.com — Free Online Media Utilities &amp; Guides.</p>
-      </footer>
     </div>
   );
 }
