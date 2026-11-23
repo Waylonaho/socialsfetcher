@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import SiteHeader from '@/components/SiteHeader';
+import AudioSafetyCTA from '@/components/AudioSafetyCTA';
+import ContextualGearCard from '@/components/ContextualGearCard';
+import WorkflowBar from '@/components/WorkflowBar';
 
 export const metadata: Metadata = {
   title: 'Why Your Saved Instagram Reel Has No Music (and How to Fix It) (2026)',
@@ -16,23 +20,10 @@ export default function SavedReelNoMusicFixPage() {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 font-sans">
       <div className="bg-slate-900 border-b border-slate-800 py-1.5 px-4 text-center text-[11px] text-slate-400">
-        <span>Disclosure: Some outbound links on this page are partner or affiliate links. If you purchase through them, we may receive a commission at no extra cost to you.</span>
+        <span>Disclosure: As an Amazon Associate I earn from qualifying purchases. We may earn commissions on partner links on this page.</span>
       </div>
 
-      <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <Link href="/" className="text-xl font-extrabold text-indigo-400">
-            Socials<span className="text-white">Fetcher</span>
-          </Link>
-          <nav className="flex items-center space-x-6 text-sm text-slate-400 font-medium">
-            <Link href="/instagram/reels/downloader" className="hover:text-indigo-400 transition">Reels Saver</Link>
-            <Link href="/blog" className="hover:text-indigo-400 transition">All Guides</Link>
-            <a href={OPUSCLIP_LINK} target="_blank" rel="noopener noreferrer sponsored" className="text-purple-400 font-bold hover:text-purple-300 transition">
-              ✨ OpusClip AI
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="flex-grow max-w-3xl mx-auto px-4 py-12 text-left">
         <div className="flex items-center gap-2 mb-4 text-xs font-semibold">
@@ -90,6 +81,9 @@ export default function SavedReelNoMusicFixPage() {
           </div>
         </section>
 
+        {/* Epidemic Sound Direct License Fix */}
+        <AudioSafetyCTA />
+
         <section className="mb-10 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-white">
             3 Workflows to Keep Full Audio Intact
@@ -116,6 +110,9 @@ export default function SavedReelNoMusicFixPage() {
           </div>
         </section>
 
+        {/* Topic-Matched Amazon Hardware Recommendations */}
+        <ContextualGearCard preset="original_audio_capture" />
+
         <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-purple-950 via-slate-900 to-slate-900 border border-purple-500/40 my-8 shadow-xl">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-bold text-purple-400 bg-purple-950 border border-purple-800 px-2.5 py-0.5 rounded-full uppercase">
@@ -124,7 +121,7 @@ export default function SavedReelNoMusicFixPage() {
             <span className="text-xs text-slate-400">AI Sound Optimization</span>
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
-            Auto-Master Clean Audio Across Shorts & Reels
+            Auto-Master Clean Audio Across Shorts &amp; Reels
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
             Stop losing audio to platform copyright strikes. OpusClip removes vocal noise, adds royalty-free dynamic backing tracks, and automatically generates animated kinetic captions tailored for short-form retention.
@@ -148,10 +145,12 @@ export default function SavedReelNoMusicFixPage() {
             </a>
           </div>
         </div>
+
+        <WorkflowBar />
       </main>
 
       <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
-        <p>© 2026 SocialsFetcher.com — Free Online Media Utilities & Guides.</p>
+        <p>© 2026 SocialsFetcher.com — As an Amazon Associate I earn from qualifying purchases.</p>
       </footer>
     </div>
   );
