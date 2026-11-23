@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import SiteHeader from '@/components/SiteHeader';
+import AudioSafetyCTA from '@/components/AudioSafetyCTA';
+import ContextualGearCard from '@/components/ContextualGearCard';
+import WorkflowBar from '@/components/WorkflowBar';
 
 export const metadata: Metadata = {
   title: 'How to Extract Audio from Instagram Reels as MP3 (Clean & Safe 2026)',
@@ -16,28 +20,15 @@ export default function ExtractInstagramReelsAudioPage() {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 font-sans">
       <div className="bg-slate-900 border-b border-slate-800 py-1.5 px-4 text-center text-[11px] text-slate-400">
-        <span>Disclosure: Some outbound links on this page are partner or affiliate links. If you purchase through them, we may receive a commission at no extra cost to you.</span>
+        <span>Disclosure: As an Amazon Associate I earn from qualifying purchases. We may earn commissions on partner links on this page.</span>
       </div>
 
-      <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <Link href="/" className="text-xl font-extrabold text-indigo-400">
-            Socials<span className="text-white">Fetcher</span>
-          </Link>
-          <nav className="flex items-center space-x-6 text-sm text-slate-400 font-medium">
-            <Link href="/instagram/reels/downloader" className="hover:text-indigo-400 transition">Reels Saver</Link>
-            <Link href="/blog" className="hover:text-indigo-400 transition">Guides</Link>
-            <a href={OPUSCLIP_LINK} target="_blank" rel="noopener noreferrer sponsored" className="text-purple-400 font-bold hover:text-purple-300 transition">
-              ✨ OpusClip AI
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="flex-grow max-w-3xl mx-auto px-4 py-12 text-left">
         <div className="flex items-center gap-2 mb-4 text-xs font-semibold">
           <span className="bg-sky-950 border border-sky-700/60 text-sky-400 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-            Audio Production & Extraction
+            Audio Production &amp; Extraction
           </span>
           <span className="text-slate-500">• 5 min read • 2026 Guide</span>
         </div>
@@ -76,11 +67,17 @@ export default function ExtractInstagramReelsAudioPage() {
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
               <h3 className="font-bold text-white text-base mb-1">Step 3: Separate the Audio Track</h3>
               <p className="text-xs sm:text-sm text-slate-400">
-                Open CapCut (mobile or desktop), import the video, tap <strong>Extract audio</strong>, delete the video layer, and export your isolated MP3 or WAV file.
+                Open CapCut (mobile or desktop), import the video, tap <strong>Extract audio</strong>, delete the video layer, and export your isolated MP3 or WAV file. Before republishing, run your edit through our <Link href="/tools/copyright-checklist" className="text-indigo-400 underline font-bold">Copyright &amp; Demonetization Risk Checker</Link>.
               </p>
             </div>
           </div>
         </section>
+
+        {/* Epidemic Sound Copyright-Safe Music Alternative */}
+        <AudioSafetyCTA />
+
+        {/* Topic-Matched Amazon Hardware Recommendations */}
+        <ContextualGearCard preset="mobile_audio_editing" />
 
         <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-900 border border-indigo-500/40 my-8 shadow-xl">
           <div className="flex items-center justify-between mb-2">
@@ -90,7 +87,7 @@ export default function ExtractInstagramReelsAudioPage() {
             <span className="text-xs text-slate-400">Enterprise AI Tech</span>
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
-            Elevate Your Audio & Video Pipeline with ToolSuite
+            Elevate Your Audio &amp; Video Pipeline with ToolSuite
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
             Get instant access to AI voice cleanup, background noise removal, Canva Pro, ChatGPT Plus, and 50+ digital tools for under $30/month.
@@ -114,10 +111,12 @@ export default function ExtractInstagramReelsAudioPage() {
             </a>
           </div>
         </div>
+
+        <WorkflowBar />
       </main>
 
       <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
-        <p>© 2026 SocialsFetcher.com — Free Online Media Utilities & Guides.</p>
+        <p>© 2026 SocialsFetcher.com — As an Amazon Associate I earn from qualifying purchases.</p>
       </footer>
     </div>
   );
