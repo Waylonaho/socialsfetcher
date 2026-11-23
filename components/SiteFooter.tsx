@@ -46,6 +46,8 @@ export default function SiteFooter() {
             Resources &amp; Compliance
           </h3>
           <ul className="space-y-1.5 text-[11px]">
+            <li><Link href="/specs" className="hover:text-indigo-400 transition">2026 Video Specs &amp; Safe Zones</Link></li>
+            <li><Link href="/about" className="hover:text-indigo-400 transition">About &amp; Testing Methodology</Link></li>
             <li><Link href="/blog" className="hover:text-indigo-400 transition">All Creator Production Guides</Link></li>
             <li><Link href="/privacy" className="hover:text-indigo-400 transition">Privacy Policy &amp; Terms</Link></li>
           </ul>
