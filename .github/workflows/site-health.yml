@@ -1,14 +1,18 @@
-name: Weekly Affiliate Audit & Daily API Health Check
+name: Daily Site Health, Link Audits & Auto-Maintenance
 
 on:
   schedule:
-    # Runs every day at 12:00 PM UTC
+    # Runs automatically every day at 12:00 PM UTC
     - cron: '0 12 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  health-and-audit:
+  health-and-maintenance:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -18,8 +22,28 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Audit Affiliate Links
+      - name: Clean Up Any Duplicate Footers
+        run: node scripts/cleanup-footers.js
+
+      - name: Refresh Monthly Date Config
+        run: node scripts/refresh-dates.js
+
+      - name: Generate Contextual Related Links Map
+        run: node scripts/generate-related-map.js
+
+      - name: Commit Auto-Maintained Data & Cleanups
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: automated footer cleanup and data refresh"
+          git push
+
+      - name: Audit Outbound Affiliate Tags (Amazon & Epidemic Sound)
         run: node scripts/audit-links.js
+
+      - name: Audit Internal Link Density (Orphan Page Check)
+        run: node scripts/audit-internal-links.js
 
       - name: Verify Live Video Extraction API
         run: node scripts/check-api.js
