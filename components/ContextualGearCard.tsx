@@ -1,6 +1,13 @@
 import React from 'react';
 
-type GearPreset = 'original_audio_capture' | 'mobile_audio_editing' | 'outdoor_wind_audio';
+export type GearPreset =
+  | 'original_audio_capture'
+  | 'mobile_audio_editing'
+  | 'outdoor_wind_audio'
+  | 'laptop_editing_dock'
+  | 'smartphone_cooling_battery'
+  | 'green_screen_backdrop'
+  | 'faceless_desk_setup';
 
 interface PresetData {
   badge: string;
@@ -67,6 +74,86 @@ const PRESETS: Record<GearPreset, PresetData> = {
         desc: 'Reject off-axis traffic noise and focus tightly on the speaker in front of the lens.',
         query: 'compact+shotgun+microphone+for+smartphone+and+camera',
         cta: 'Check Shotgun Mics on Amazon →',
+      },
+    ],
+  },
+  laptop_editing_dock: {
+    badge: 'Post-Production Workstation',
+    heading: 'Speed Up Multi-Clip Exports & High-Bitrate Transfers',
+    intro:
+      'Batch-rendering 60fps 1080p/4K videos and moving large MP4 archives off your phone requires high-bandwidth I/O and color-accurate monitoring:',
+    items: [
+      {
+        title: '1. 10Gbps USB-C Hub & UHS-II SD Card Readers',
+        desc: 'Offload gigabytes of raw camera roll footage in seconds without saturating single-port laptop adapters.',
+        query: '10gbps+usb+c+hub+sd+card+reader+4k+60hz',
+        cta: 'Check USB-C Hubs on Amazon →',
+      },
+      {
+        title: '2. Ergonomic Vertical & Multi-Angle Laptop Stands',
+        desc: 'Keep laptop thermals cool during heavy Premiere, CapCut Desktop, and DaVinci Resolve export queues.',
+        query: 'aluminum+ergonomic+ventilated+laptop+stand+desk',
+        cta: 'Check Laptop Stands on Amazon →',
+      },
+    ],
+  },
+  smartphone_cooling_battery: {
+    badge: 'Mobile Filming Endurance',
+    heading: 'Prevent Phone Overheating & Battery Throttling During Long Takes',
+    intro:
+      'Recording 4K 60fps vertical video or running live teleprompter sessions heats up smartphone processors fast—causing frame drops and screen dimming:',
+    items: [
+      {
+        title: '1. MagSafe Semiconductor Phone Coolers',
+        desc: 'Actively pull heat off the back of your iPhone or Android during 30+ minute batch filming sessions.',
+        query: 'magsafe+semiconductor+phone+cooler+for+video+recording',
+        cta: 'Check Phone Coolers on Amazon →',
+      },
+      {
+        title: '2. Slim 10,000mAh Magnetic Wireless Power Banks',
+        desc: 'Snap onto your rig for cable-free power while filming on-location Reels and TikToks.',
+        query: 'slim+magsafe+10000mah+portable+charger+power+bank',
+        cta: 'Check MagSafe Power Banks on Amazon →',
+      },
+    ],
+  },
+  green_screen_backdrop: {
+    badge: 'Studio Background & Framing',
+    heading: 'Clean Backgrounds & Pro Separation Without Expensive Remodels',
+    intro:
+      'Stand out in crowded vertical feeds with crisp subject separation, collapsible backdrops, or subtle RGB rim lighting:',
+    items: [
+      {
+        title: '1. Collapsible Pop-Up Green / Grey Studio Backdrops',
+        desc: 'Set up a clean, distraction-free background in 10 seconds and fold it flat behind a door when finished.',
+        query: 'collapsible+pop+up+green+screen+backdrop+stand',
+        cta: 'Check Pop-Up Backdrops on Amazon →',
+      },
+      {
+        title: '2. Rechargeable Mini RGB Magnetic Accent Lights',
+        desc: 'Add subtle color contrast behind your shoulders to make 1080p compressed uploads pop on mobile screens.',
+        query: 'mini+rgb+led+video+light+magnetic+rechargeable',
+        cta: 'Check RGB Accent Lights on Amazon →',
+      },
+    ],
+  },
+  faceless_desk_setup: {
+    badge: 'Faceless Channel Rig',
+    heading: 'Overhead & Screen-First Hardware for Faceless Channels',
+    intro:
+      'Running a faceless tutorial, product review, or voiceover channel relies on steady overhead framing and tactile desk controls:',
+    items: [
+      {
+        title: '1. Articulating Overhead Desk Mount Arms',
+        desc: 'Capture rock-steady top-down unboxings, whiteboard notes, or phone demos without tripods in your way.',
+        query: 'overhead+camera+desk+mount+articulating+arm+phone',
+        cta: 'Check Overhead Arms on Amazon →',
+      },
+      {
+        title: '2. Programmable Macro Keypads for Video Editing',
+        desc: 'Map split, ripple-delete, and zoom shortcuts to physical dials to cut editing time in half.',
+        query: 'programmable+macro+keypad+knob+for+video+editing',
+        cta: 'Check Editing Keypads on Amazon →',
       },
     ],
   },
