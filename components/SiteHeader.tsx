@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 const QUICK_ITEMS = [
+  { title: 'Copyright & Demonetization Risk Checker', href: '/tools/copyright-checklist', tag: 'Tool' },
   { title: 'Video Downloader (No Watermark)', href: '/', tag: 'Tool' },
   { title: 'Creator Teleprompter & Script Timer', href: '/tools/creator-teleprompter', tag: 'Tool' },
   { title: 'Viral Video Hook Scorer', href: '/tools/hook-scorer', tag: 'Tool' },
